@@ -23,3 +23,11 @@ Route::get('/', function () {
 Auth::routes();
 Route::resource('blogs', BlogController::class);
 Route::resource('clients', ClientContactController::class);
+
+// Route::get('blogs', [BlogController::class,'index']);
+// Route::get('create', [BlogController::class,'create']);
+// Route::get('blogs/{id}', [BlogController::class,'show']);
+// Route::get('blogs/{id}', [BlogController::class,'edit']);
+// Route::post('store', [BlogController::class,'store']);
+// Route::put('blogs/{id}', [BlogController::class,'update']);
+// Route::post('blogs/{id}', [BlogController::class,'destroy']);
