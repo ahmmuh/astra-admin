@@ -2,20 +2,11 @@
 
 @section('content')
 <div class="row">
-   <div class="col-lg-4">
-       <!-- Some borders are removed -->
-       <ul class="list-group list-group-flush">
-           <li class="list-group-item active">Item</li>
-           <li class="list-group-item">Item</li>
-           <li class="list-group-item">Item</li>
-           <li class="list-group-item">Item</li>
-           <li class="list-group-item">Item</li>
-         </ul>
-   </div>
   @if ($jobs->count() === 0)
  <div class="col">
       <div class="alert alert-success" role="alert">
-          <h5 class="lead">Vi har inga lediga jobb just nu</h5>
+          <h5 class="lead">Vi har inga annonserade lediga jobb just nu</h5>
+          <a href="{{ route('jobs.create') }}" class="btn btn-warning">Lägg till ny annons</a>
       </div>
       
  </div>

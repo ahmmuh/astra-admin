@@ -5,7 +5,7 @@
     <a name="" id="" class="btn text-primary my-2" href="{{route ('blogs.create')}}" role="button">Skapa blog</a>
 
     <div class="row">
-        <div class="col-3 col-left">
+        {{-- <div class="col-3 col-left">
 
             <div class="list-group">
                 <h3 class="list-group-item active">Menu</h3>
@@ -13,18 +13,19 @@
                 <a href="{{ route('clients.create') }}" class="list-group-item list-group-item-action">Create</a>
                 <a href="#" class="list-group-item list-group-item-action disabled">Disabled item</a>
             </div>
-        </div>
+        </div> --}}
        @if ($blogs->count() === 0)
- <div class="col">
+ {{-- <div class="col">
       <div class="alert alert-success" role="alert">
           <h5 class="lead">Inga nyheter just nu</h5>
       </div>
       
- </div>
+ </div> --}}
       
   @else
             
         <div class="col">
+            <span class="badge rounded-pill text-bg-danger text-white"><strong>Antal nyheter {{ $blogs->count() }}</strong></span>
             @foreach ($blogs as $blog)
             <div class="card m-2">
                 <div class="card-body">
