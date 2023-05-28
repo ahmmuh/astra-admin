@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientContactController;
+use App\Http\Controllers\JobsController;
 
 
 /*
@@ -23,6 +24,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::resource('blogs', BlogController::class);
 Route::resource('clients', ClientContactController::class);
+Route::resource('jobs', JobsController::class);
 
 // Route::get('blogs', [BlogController::class,'index']);
 // Route::get('create', [BlogController::class,'create']);

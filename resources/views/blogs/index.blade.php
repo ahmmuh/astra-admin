@@ -14,10 +14,18 @@
                 <a href="#" class="list-group-item list-group-item-action disabled">Disabled item</a>
             </div>
         </div>
+       @if ($blogs->count() === 0)
+ <div class="col">
+      <div class="alert alert-success" role="alert">
+          <h5 class="lead">Inga nyheter just nu</h5>
+      </div>
+      
+ </div>
+      
+  @else
+            
         <div class="col">
             @foreach ($blogs as $blog)
-            ech '/public/astra.jpg'
-            <p>{{ $blog->blogImage }}</p>
             <div class="card m-2">
                 <div class="card-body">
                     <img class="card-img-top img-thumbnail" style="width: 300px; height: 200px" src="{{ asset('storage/images/'.$blog->blogImage) }}"  alt="Bild">
@@ -42,6 +50,8 @@
             </div>
                 @endforeach
             </div>
+                
+            @endif
 
             {{ $blogs->links() }}
 
