@@ -9,14 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+   public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->text('description')->nullable();
-            $table->string('serviceType')->nullable();
-            $table->string('serviceImage')->nullable();
+              $table->string('jobtitle')->nullable();
+            $table->string('jobDescription')->nullable();
+            $table->string('location')->nullable();
+            $table->text('publiceradDatum')->nullable();
+            $table->text('slutDatum')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('jobs');
     }
 };

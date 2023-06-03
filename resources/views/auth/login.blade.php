@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col ">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -45,7 +45,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Kom ihåg') }}
                                     </label>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Har du glömt ditt lösenord?') }}
                                     </a>
                                 @endif
                             </div>
