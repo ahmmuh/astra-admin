@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientContactController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\ServiceController;
 
 
 /*
@@ -25,11 +26,5 @@ Auth::routes();
 Route::resource('blogs', BlogController::class);
 Route::resource('clients', ClientContactController::class);
 Route::resource('jobs', JobsController::class);
-
-// Route::get('blogs', [BlogController::class,'index']);
-// Route::get('create', [BlogController::class,'create']);
-// Route::get('blogs/{id}', [BlogController::class,'show']);
-// Route::get('blogs/{id}', [BlogController::class,'edit']);
-// Route::post('store', [BlogController::class,'store']);
-// Route::put('blogs/{id}', [BlogController::class,'update']);
-// Route::post('blogs/{id}', [BlogController::class,'destroy']);
+Route::resource('services', ServiceController::class);
+Route::resource('applications', ServiceController::class);

@@ -12,16 +12,17 @@
  </div>
       
   @else
-   <div class="col">
-        <a href="{{ route('jobs.create') }}">Annonsera nytt jobb</a>
-        <ul class="list-group">
-  <li class="list-group-item "><a href="#">Cras justo odio</a></li>
-  <li class="list-group-item">
+  <div class="col">
+    <a href="{{ route('jobs.create') }}" class="btn btn-success text-white mb-3">Annonsera nytt jobb</a>
+        <!-- Hover added -->
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action bg-info text-white">Aktiva jobbannonser</a>
+         @foreach ($jobs as $job)
+         <h5><a href="{{ route('jobs.show', $job->id) }}" class="list-group-item text-primary">{{ $job->jobTitle }}</a>
+</h5>
 
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, eius ducimus asperiores omnis dolorem porro ipsa sequi officia? Exercitationem amet est fugit excepturi provident dolore ratione! Libero id soluta sit!</p>
-  </li>
-        
-</ul>
+         @endforeach
+        </div>
    </div>
       
   @endif

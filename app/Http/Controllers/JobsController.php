@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use Illuminate\Http\Request;
-
+use DB;
 class JobsController extends Controller
 {
     /**
@@ -31,7 +31,7 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'jobtitle' => 'required:max:10',
+            'jobTitle' => 'required:max:10',
             'jobDescription' => 'required',
             'location' => 'required',
             'publiceradDatum' => 'required',
@@ -72,16 +72,35 @@ class JobsController extends Controller
     public function update(Request $request, Job $job)
     {
        $request->validate([
-            'jobtitle' => 'required:max:10',
+            'jobTitle' => 'required',
             'jobDescription' => 'required',
             'location' => 'required',
             'publiceradDatum' => 'required',
             'slutDatum' => 'required',
 
         ]);
+        // DB::table('jobs')
+        //     ->update(
+        //         [
+        //         'jobTitle' => $job->jobTitle,
+        //          'jobDescription' => $job->jobDescription,
+        //          'location' => $job->location,
+        //           'publiceradDatum' => $job->publiceradDatum,
+        //            'slutDatum' => $job->slutDatum,
+                    
+        //             ]);
+        //    $affected = DB::table('jobs')
+        //       ->where('id', "=", $job['id'])
+        //       ->update(['jobTitle' => $job['jobTitle'], 
+        //       'jobDescription' => $job['jobDescription'],
+        //       'location' => $job['location'],
+        //       'publiceradDatum' => $job['publiceradDatum'],
+        //       'slutDatum' => $job['slutDatum']
+        //     ]);
      
-    $job->update();
-    return redirect()->route('jobs.index')->with('success','One item has been updated');
+        //       return $affected;
+            $job->update($request->all());
+             return redirect()->route('jobs.index')->with('success','One item has been updated');
      }
 
      

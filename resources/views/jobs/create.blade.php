@@ -10,7 +10,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="jobtitle" class="col-4 col-form-label">Jobb titel</label>
-                            <input type="text" class="form-control" name="jobtitle" id="jobtitle" placeholder="Vad är det för jobb?">
+                            <input type="text" class="form-control" name="jobTitle" id="jobTitle" placeholder="Vad är det för jobb?">
                     </div>
                    <div class="mb-3 ">
                         <label for="jobDescription" class="col-4 col-form-label">Jobb beskrivning</label>

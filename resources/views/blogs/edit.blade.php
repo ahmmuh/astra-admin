@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid ml-4">
-    <a name="" id="" class="btn" href="/blogs" role="button">
+    <a name="" id="" class="btn" href="{{ route('blogs.show',$blog->id) }}" role="button">
         <i class="fa-solid fa-2xl fa-chevron-left"></i>
 
     </a>
@@ -11,7 +11,7 @@
 
 <div class="container">
     <div class="row">
-        <h3><strong class="text-danger">Du håller på uppdatera:</strong> {{$blog->title}} med ID {{$blog->id}}</h3>
+        <h3> {{$blog->title}}</h3>
 
         @if ($errors->any())
         <ul>
