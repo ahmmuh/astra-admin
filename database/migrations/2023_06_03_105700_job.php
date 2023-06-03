@@ -12,13 +12,13 @@ return new class extends Migration
    public function up(): void
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-              $table->string('jobTitle')->nullable();
-            $table->string('jobDescription')->nullable();
-            $table->string('location')->nullable();
-            $table->text('publiceradDatum')->nullable();
-            $table->text('slutDatum')->nullable();
-            $table->timestamps();
+            // $table->bigIncrements('id');
+            //   $table->string('jobTitle')->nullable();
+            // $table->string('jobDescription')->nullable();
+            // $table->string('location')->nullable();
+            // $table->text('publiceradDatum')->nullable();
+            // $table->text('slutDatum')->nullable();
+            // $table->timestamps();
         });
     }
 

@@ -34,6 +34,7 @@
             @yield('email')
             @yield('client')
             @yield('blog')
+            @yield('create-application')
                 </div>
             </div>
         </main>

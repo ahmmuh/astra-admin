@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientContactController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ApplicationController;
 
 
 /*
@@ -27,4 +28,4 @@ Route::resource('blogs', BlogController::class);
 Route::resource('clients', ClientContactController::class);
 Route::resource('jobs', JobsController::class);
 Route::resource('services', ServiceController::class);
-Route::resource('applications', ServiceController::class);
+Route::resource('applications', ApplicationController::class);
