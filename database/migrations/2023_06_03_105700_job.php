@@ -9,14 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+   public function up(): void
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('jobtitle');
-            $table->string('jobDescription');
-            $table->string('publiceradDatum');
-            $table->string('slutDatum');
+            $table->bigIncrements('id');
+              $table->string('jobTitle')->nullable();
+            $table->string('jobDescription')->nullable();
+            $table->string('location')->nullable();
+            $table->text('publiceradDatum')->nullable();
+            $table->text('slutDatum')->nullable();
             $table->timestamps();
         });
     }

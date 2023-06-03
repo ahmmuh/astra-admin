@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
+    protected $fillable = [
+        'jobTitle',
+        'jobDescription',
+        'location',
+        'publiceradDatum',
+        'slutDatum',
+
+    ];
     use HasFactory;
 }

@@ -7,12 +7,9 @@ use Illuminate\Http\Request;
 
 class ClientContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+   public function index()
     {
-        $clients = ClientContact::all();
+        $clients =  ClientContact::latest()->simplePaginate(5);
         return view('clients.index',compact('clients'));
     }
 
@@ -24,58 +21,71 @@ class ClientContactController extends Controller
         return view('clients.create');
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        request()->validate(array(
+        $request->validate([
             'firstName' => 'required',
             'lastName' => 'required',
             'email' => 'required',
+            'telefon' => 'required',
             'description' => 'required',
-        ));
 
-        ClientContact::create($request->all());
+        ]);
+          ClientContact::create($request->all());
+         return redirect()->route('clients.index')->with('success','One item has been added');
+        
     }
- 
+
     /**
      * Display the specified resource.
      */
     public function show($id)
-    {
-        return view('clients.show',compact('id'));
+    {   
+        $client = ClientContact::findOrFail($id);
+        return view('clients.show',compact('client'));
     }
+ 
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ClientContact $clientContact)
+    public function edit($id)
     {
-       return view('clients.edit',compact('clientContact'));
-
+        $clients = ClientContact::findOrFail($id);
+        return view('clients.edit',compact('clients'));
     }
 
+   
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ClientContact $clientContact)
-    {
-        request()->validate(array(
+    public function update(Request $request, ClientContact $client)
+    {$request->validate([
             'firstName' => 'required',
             'lastName' => 'required',
             'email' => 'required',
+            'telefon' => 'required',
             'description' => 'required',
-        ));
-        $clientContact->update();
-                return redirect()->route('clients.index')->with('success','One client contact has been added');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(ClientContact $clientContact)
+        ]);
+    
+    $client->update();
+    return redirect()->route('clients.index')->with('success','One item has been updated');
+     }
+
+     
+
+    public function destroy($id)
     {
-        $clientContact->delete();
+        $client = ClientContact::findOrFail($id);
+        $client->delete();
+        return redirect()->route('clients.index')->with('success','One item has been deleted');
+
     }
 }

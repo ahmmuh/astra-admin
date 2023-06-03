@@ -12,7 +12,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs =  Blog::latest()->simplePaginate(2);
+        $blogs =  Blog::latest()->simplePaginate(5);
         return view('blogs.index',compact('blogs'));
     }
 
@@ -32,18 +32,17 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required:max:10',
             'description' => 'required',
-            'blogImage' => 'required',
+            'blogImage' => 'required|mimes:jpeg,png,jpg|max:2048',
 
         ]);
-
-        $blogData = $request->all();
-        $fileName = time().$request->file('blogImage')->getClientOriginalName();
-        $path = $request->file('blogImage')->storeAs('images',$fileName,'public');
-        $blogData['blogImage'] = '/storage/' .$path;
-        Blog::create($request->all());
-        return redirect()->route('blogs.index')->with('success','One item has been added');
+        
+         $blogImage = time() . '.' . $request->blogImage->extension();
+        // $request->image->move(public_path('images'), $imageName);
+        $request->blogImage->storeAs('public/images', $blogImage);
+          Blog::create($request->all());
+         return redirect()->route('blogs.index')->with('success','One item has been added');
         
     }
 
@@ -56,6 +55,8 @@ class BlogController extends Controller
         return view('blogs.show',compact('blog'));
     }
  
+
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -65,11 +66,7 @@ class BlogController extends Controller
         return view('blogs.edit',compact('blog'));
     }
 
-       public function test($id)
-    {
-        $blog = Blog::findOrFail($id);
-        return view('blogs.test',compact('blog'));
-    }
+   
     /**
      * Update the specified resource in storage.
      */
@@ -81,23 +78,29 @@ class BlogController extends Controller
             'description' => 'required',
 
         ));
-        $fileName = '';
-        if ($request->hasFile('blogImage')) {
-          $fileName = time() . '.' . $request->blogImage->extension();
-          $request->blogImage->storeAs('public/images', $fileName);
-          if ($blog->blogImage) {
-            Storage::delete('public/images/' . $blog->image);
-          }
-        } else {
-          $fileName = $blog->blogImage;
-        }
-        // return json_decode($blog);
-         $blog->update();
+        $blogImage = '';
+     if ($request->hasFile('file')) {
+         $blogImage = time() . '.' . $request->file->extension();
+         $request->file->storeAs('public/images', $blogImage);
+        if ($post->image) {
+        Storage::delete('public/images/' . $post->image);
+      }
+    } else {
+      $blogImage = $blog->image;
+    }
+    $blog->update();
+    return redirect()->route('blogs.index')->with('success','One item has been updated');
+
 
      }
 
-    public function destroy(Blog $blog)
+     
+
+    public function destroy($id)
     {
+        $blog = Blog::findOrFail($id);
         $blog->delete();
+        return redirect()->route('blogs.index')->with('success','One item has been deleted');
+
     }
 }

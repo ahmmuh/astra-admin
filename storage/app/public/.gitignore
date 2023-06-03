@@ -1,9 +1,0 @@
-*
-!.gitignore
-.DS_Store
-	.editorconfig
-	.env.example
-	.gitattributes
-	.gitignore
-	README.md
-	tests/
