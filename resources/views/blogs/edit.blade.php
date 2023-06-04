@@ -28,20 +28,26 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
                         <div class="form-group">
-                            <input type="text" name="title" value="{{ $blog->title }}" class="form-control" placeholder="title">
+                            <input type="text" name="title" value="{{ $blog->title }}" required class="form-control" placeholder="title">
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
-                    <img class="card-img-top img-thumbnail" style="width: 300px; height: 200px" src="{{asset($blog->blogImage)}}" alt="bild">
-                        <div class="form-group">
-                            <input type="file" name="blogImage" value="{{ asset($blog->blogImage)}}" class="form-control" placeholder="{{ asset($blog->blogImage) }}">
-                        </div>
-                    </div>
+                      <div class="form-group">
+                        <div class="mb-3">
+                            <label for="bodyText" class="form-label">Brödtext</label>
+                            <textarea required class="form-control" required name="bodyText" id="bodyText" rows="3">{{ $blog->bodyText }}</textarea>
 
+                        </div>
+                        </dvi>
                     
                     <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
                         <div class="form-group">
-                            <textarea class="form-control" style="height:150px" name="description" placeholder="Text">{{ $blog->description }}</textarea>
+                            <textarea class="form-control" style="height:150px" required name="description" placeholder="Text">{{ $blog->description }}</textarea>
+                        </div>
+                    </div>
+                       <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
+                    <img class="card-img-top img-thumbnail" style="width: 300px; height: 200px" src="{{asset('storage/images/'.$blog->blogImage)}}" alt="bild">
+                        <div class="form-group">
+                            <input type="file" name="blogImage" required value="{{asset('storage/images/'.$blog->blogImage)}}" class="form-control">
                         </div>
                     </div>
                 </div>
