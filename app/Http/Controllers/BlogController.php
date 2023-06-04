@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\File;
 use App\Models\Blog;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 class BlogController extends Controller
@@ -16,7 +17,7 @@ class BlogController extends Controller
 }
     public function index()
     {
-        $blogs =  Blog::latest()->simplePaginate(5);
+        $blogs =  Blog::latest()->simplePaginate(3);
         return view('blogs.index',compact('blogs'));
     }
 
@@ -27,9 +28,6 @@ class BlogController extends Controller
     {
         return view('blogs.create');
     }
-
-
-
     /**
      * Store a newly created resource in storage.
      */
@@ -37,17 +35,22 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required:max:10',
+            'bodyText' => 'required|max:200',
             'description' => 'required',
-            'blogImage' => 'required|mimes:jpeg,png,jpg|max:2048',
+            'blogImage' => 'required',
 
         ]);
-        
-         $blogImage = time() . '.' . $request->blogImage->extension();
-        // $request->image->move(public_path('images'), $imageName);
-        $request->blogImage->storeAs('public/images', $blogImage);
-          Blog::create($request->all());
+
+        $img = $request->blogImage;
+        $img_name = $img->getClientOriginalName();
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->bodyText = $request->bodyText;
+        $blog->description = $request->description;
+        $blog->blogImage = $img_name;
+        Storage::disk('public')->put('images/'.$img_name, file_get_contents($img));
+        $blog->save();
          return redirect()->route('blogs.index')->with('success','One item has been added');
-        
     }
 
     /**
@@ -76,25 +79,30 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        request()->validate(array(
-            'title' => 'required',
-            'blogImage' => 'required',
+      $request->validate([
+            'title' => 'required:max:10',
+            'bodyText' => 'required|max:200',
             'description' => 'required',
+            'blogImage' => 'required',
 
-        ));
-        $blogImage = '';
-     if ($request->hasFile('file')) {
-         $blogImage = time() . '.' . $request->file->extension();
-         $request->file->storeAs('public/images', $blogImage);
-        if ($post->image) {
-        Storage::delete('public/images/' . $post->image);
-      }
-    } else {
-      $blogImage = $blog->image;
-    }
-    $blog->update();
+        ]);
+       $img = $request->blogImage;
+        $img_name = $img->getClientOriginalName();
+        $img = $request->blogImage;
+        $blog->title = $request->title;
+        $blog->bodyText = $request->bodyText;
+        $blog->description = $request->description;
+        $blog->blogImage = $img_name;
+        Storage::disk('public')->put('images/'.$img_name, file_get_contents($img));
+        $result = DB::table('blogs')
+        ->where('id', $blog->id)
+        ->update([
+        'title' => $blog->title,
+        'bodyText' => $blog->bodyText,
+        'description' => $blog->description,
+        'blogImage' => $blog->blogImage,
+    ]);
     return redirect()->route('blogs.index')->with('success','One item has been updated');
-
 
      }
 

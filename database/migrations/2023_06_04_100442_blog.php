@@ -9,11 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+     public function up(): void
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
+            $table->string('bodyText')->nullable();
             $table->text('description')->nullable();
             $table->string('blogImage') ->nullable()->nullable();
             $table->timestamps();

@@ -24,10 +24,18 @@
                 @csrf
                 <div class="form-group">
                     <div class="mb-3">
-                        <label for="" class="form-label">Tittle</label>
-                        <input type="text" name="title" required id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <label for="title" class="form-label">Tittle</label>
+                        <input type="text" name="title" required id="title" class="form-control">
                     </div>
                     </dvi>
+
+                     <div class="form-group">
+                        <div class="mb-3">
+                            <label for="bodyText" class="form-label">Brödtext</label>
+                            <textarea required class="form-control" name="bodyText" id="bodyText" rows="3"></textarea>
+
+                        </div>
+                        </dvi>
                     <div class="form-group">
                         <div class="mb-3">
                             <label for="" class="form-label">Beskrivning</label>
@@ -36,8 +44,8 @@
                         </div>
                         </dvi>
                         <div class="mb-3">
-                            <label for="" class="form-label">Bild</label>
-                            <input type="file" name="blogImage" id="" required class="form-control" placeholder="" aria-describedby="helpId">
+                            <label for="blogImage" class="form-label">Bild</label>
+                            <input type="file" name="blogImage" id="blogImage" required class="form-control">
                         </div>
                         
                         <button type="submit" name="" id="" class="btn btn-success">Skapa</button>

@@ -84,26 +84,7 @@ class JobsController extends Controller
             'slutDatum' => 'required',
 
         ]);
-        // DB::table('jobs')
-        //     ->update(
-        //         [
-        //         'jobTitle' => $job->jobTitle,
-        //          'jobDescription' => $job->jobDescription,
-        //          'location' => $job->location,
-        //           'publiceradDatum' => $job->publiceradDatum,
-        //            'slutDatum' => $job->slutDatum,
-                    
-        //             ]);
-        //    $affected = DB::table('jobs')
-        //       ->where('id', "=", $job['id'])
-        //       ->update(['jobTitle' => $job['jobTitle'], 
-        //       'jobDescription' => $job['jobDescription'],
-        //       'location' => $job['location'],
-        //       'publiceradDatum' => $job['publiceradDatum'],
-        //       'slutDatum' => $job['slutDatum']
-        //     ]);
-     
-        //       return $affected;
+
             $job->update($request->all());
              return redirect()->route('jobs.index')->with('success','One item has been updated');
      }
