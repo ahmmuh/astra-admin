@@ -6,6 +6,5 @@
 <a href="{{ route('jobs.index') }}" class="list-group-item list-group-item-action"><i class="fa-sharp fa-solid fa-laptop-file fa-lg"></i> Lediga jobb</a>
 <a href="{{ route('services.index') }}" class="list-group-item list-group-item-action"> <i class="fa-solid fa-person-digging fa-lg"></i> A Tjänster</a>
 <a href="{{ route('applications.index') }}" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-lines fa-lg"></i>  Jobb ansökningar</a>
-<a href="{{ route('applications.create') }}" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-lines fa-lg"></i>  Create application</a>
 </div>
 @endif

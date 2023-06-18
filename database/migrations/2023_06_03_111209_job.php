@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-              $table->string('jobTitle')->nullable();
+            $table->string('jobTitle')->nullable();
             $table->string('jobDescription')->nullable();
             $table->string('location')->nullable();
             $table->text('publiceradDatum')->nullable();

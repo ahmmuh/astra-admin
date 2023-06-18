@@ -24,17 +24,8 @@
         @include('layouts.navbar')
         <main class="py-4 container">
         <div class="row">
-            <div class="col-4">
-                @include('layouts.sidebar')
-            </div>
        <div class="col">
             @yield('content')
-            @yield('job')
-            @yield('service')
-            @yield('email')
-            @yield('client')
-            @yield('blog')
-            @yield('application')
                 </div>
             </div>
         </main>

@@ -1,20 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+
+    @if(session()->has('danger'))
+    <div class="alert alert-danger">
+        {{ session()->get('danger') }}
+    </div>
+@endif
 <div class="row">
   @if ($services->count() === 0)
  <div class="col">
       <div class="alert alert-success" role="alert">
           <h5 class="lead">Inga tjänster</h5>
-          <a href="{{ route('services.create') }}" class="btn btn-warning">Lägg till ny tjänst</a>
+          <a href="{{ route('services.create') }}" type="button" class="btn btn-warning">Lägg till ny tjänst</a>
       </div>
       
  </div>
       
   @else
    <div class="col">
-        <a href="{{ route('services.create') }}">Lägg till ny tjänst</a>
-    <div class="row">
+    <a href="{{ route('services.create') }}" type="button" class="btn btn-warning">Lägg till ny tjänst</a>
+
+    <div class="row mt-3">
             @foreach ($services as $service)
          <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card mb-3">

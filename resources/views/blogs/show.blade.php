@@ -21,7 +21,7 @@
                 <form action="{{ route('blogs.destroy', $blog->id)  }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn"><i class="fa-solid fa-trash fa-2"></i></button>
+                        <button onclick="return confirm('Är du säker på att vill ta bort?')" type="submit" class="btn"><i class="fa-solid fa-trash fa-2"></i></button>
                     </form>                <a href="{{ route('blogs.index') }}" class="card-link"><i class="fa-solid fa-chevron-left"></i></a>
             </div>
             </div>
