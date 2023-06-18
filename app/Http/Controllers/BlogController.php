@@ -35,10 +35,16 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required:max:10',
-            'bodyText' => 'required|max:200',
-            'description' => 'required',
-            'blogImage' => 'required',
+            'bodyText' => 'required|max:120',
+            'description' => 'required|min:300',
+            'blogImage' => 'required|mimes:png,jpg,jpeg',
 
+        ],
+        [ 
+        'title.required' => 'Detta fält är obligatoriskt (titel, max 10 tecken)',
+        'bodyText.required' => 'Detta fält är obligatoriskt (kort text, max 120 tecken)',
+        'description.required' => 'Detta fält är obligatoriskt (Längre text, min 300 tecken)',
+        'blogImage.required' => 'Detta fält är obligatoriskt (bild format png, jpg eller jpeg)',
         ]);
 
         $img = $request->blogImage;
@@ -50,7 +56,7 @@ class BlogController extends Controller
         $blog->blogImage = $img_name;
         Storage::disk('public')->put('images/'.$img_name, file_get_contents($img));
         $blog->save();
-         return redirect()->route('blogs.index')->with('success','One item has been added');
+         return redirect()->route('blogs.index')->with('success','Nyhet har nu publicerats');
     }
 
     /**
@@ -79,12 +85,18 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-      $request->validate([
+       $request->validate([
             'title' => 'required:max:10',
-            'bodyText' => 'required|max:200',
-            'description' => 'required',
-            'blogImage' => 'required',
+            'bodyText' => 'required|max:120',
+            'description' => 'required|min:300',
+            'blogImage' => 'required|mimes:png,jpg,jpeg',
 
+        ],
+        [ 
+        'title.required' => 'Detta fält är obligatoriskt (titel, max 10 tecken)',
+        'bodyText.required' => 'Detta fält är obligatoriskt (kort text, max 120 tecken)',
+        'description.required' => 'Detta fält är obligatoriskt (Längre text, min 300 tecken)',
+        'blogImage.required' => 'Detta fält är obligatoriskt (bild format png, jpg eller jpeg)',
         ]);
        $img = $request->blogImage;
         $img_name = $img->getClientOriginalName();
@@ -102,7 +114,7 @@ class BlogController extends Controller
         'description' => $blog->description,
         'blogImage' => $blog->blogImage,
     ]);
-    return redirect()->route('blogs.index')->with('success','One item has been updated');
+    return redirect()->route('blogs.index')->with('success','Nyheten har uppdaterats');
 
      }
 
@@ -112,7 +124,7 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $blog->delete();
-        return redirect()->route('blogs.index')->with('success','One item has been deleted');
+        return redirect()->route('blogs.index')->with('danger','En nyhet har nu raderats');
 
     }
 }

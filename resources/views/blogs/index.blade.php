@@ -2,7 +2,18 @@
 
 @section('content')
 <div class="container mb-5">
-    <a name="" id="" class="btn text-primary my-2" href="{{route ('blogs.create')}}" role="button">Skapa blog</a>
+    @if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+
+  @if(session()->has('danger'))
+    <div class="alert alert-danger">
+        {{ session()->get('danger') }}
+    </div>
+@endif
+    <a name="" id="" class="btn btn-warning text-primary my-2" href="{{route ('blogs.create')}}" role="button">Skapa blog</a>
 
     <div class="row">
        @if ($blogs->count() === 0)

@@ -5,8 +5,9 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientContactController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ApplicationController;
-
+use \App\Mail\ContactMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,16 @@ use App\Http\Controllers\ApplicationController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('send', [ContactMail::class,'envelope']);
+
+Route::get('/order',function(){
+    return new OrderMail();
 });
 
 Auth::routes();

@@ -42,11 +42,18 @@ class JobsController extends Controller
             'publiceradDatum' => 'required',
             'slutDatum' => 'required',
 
-        ]);
+        ],
+     [
+        'jobTitle.required' => 'Du måste ha titel',
+        'jobDescription.required' => 'Tjänsten måste ha beskrivning',
+        'location.required' => 'Vilken ort?',
+        'publiceradDatum.required' => 'Välj publiceringsdatum',
+        'slutDatum.required' => 'Sista ansökninsgdatum saknas',
+    ]);
         
        
           Job::create($request->all());
-         return redirect()->route('jobs.index')->with('success','One item has been added');
+         return redirect()->route('jobs.index')->with('success','Tjänsten utannonserats');
         
     }
 
@@ -83,10 +90,19 @@ class JobsController extends Controller
             'publiceradDatum' => 'required',
             'slutDatum' => 'required',
 
-        ]);
+        ],
+    
+        [
+        'jobTitle.required' => 'Du måste ha titel',
+        'jobDescription.required' => 'Tjänsten måste ha beskrivning',
+        'location.required' => 'Vilken ort?',
+        'publiceradDatum.required' => 'Välj publiceringsdatum',
+        'slutDatum.required' => 'Sista ansökninsgdatum saknas',
+    ]
+    );
 
             $job->update($request->all());
-             return redirect()->route('jobs.index')->with('success','One item has been updated');
+             return redirect()->route('jobs.index')->with('danger','Ett jobb uppdaterades');
      }
 
      
@@ -95,7 +111,7 @@ class JobsController extends Controller
     {
         $job = Job::findOrFail($id);
         $job->delete();
-        return redirect()->route('jobs.index')->with('success','One item has been deleted');
+        return redirect()->route('jobs.index')->with('danger','En tjänst har nu raderats');
 
     }
 }

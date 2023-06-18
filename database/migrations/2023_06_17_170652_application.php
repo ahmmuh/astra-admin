@@ -18,9 +18,9 @@ return new class extends Migration
            $table->string('email')->nullable();
            $table->string('telefon')->nullable();
            $table->string('description')->nullable();
+           $table->string('jobType')->nullable();
+           $table->string('location')->nullable();
            $table->timestamps();
-           $table->unsignedBigInteger('job_id');
-            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
        });
     }
 
