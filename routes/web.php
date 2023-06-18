@@ -1,12 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientContactController;
+
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogControllerAPI;
+
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\JobsControllerAPI;
+
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\MailController;
+use App\Http\Controllers\ServiceControllerAPI;
+
+
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\ApplicationControllerAPI;
+
+use App\Http\Controllers\MailController;
 use \App\Mail\ContactMail;
 
 /*
@@ -40,3 +50,11 @@ Route::resource('clients', ClientContactController::class);
 Route::resource('jobs', JobsController::class);
 Route::resource('services', ServiceController::class);
 Route::resource('applications', ApplicationController::class);
+
+
+//API endpoints
+
+Route::resource('api/blogs', BlogControllerAPI::class);
+Route::resource('api/services', ServiceControllerAPI::class);
+Route::resource('api/jobs', JobsControllerAPI::class);
+Route::resource('api/applications', ApplicationControllerAPI::class);
