@@ -1,4 +1,4 @@
-@extends('/frontend/layouts.app')
+@extends('frontend.layouts.app')
 @section('content')
 <style>
     .blue-background{
@@ -15,7 +15,7 @@
             <p>
                 Göteborgs bästa fruktkorgar", ekologisk frukt, snabb och enkel leverans!
             </p>
-            <a href="{{url('/frontend/pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
+            <a href="{{url('frontend.pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
           </div>
       </div>
     </div>
@@ -30,13 +30,12 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <p>Göteborgs bästa fruktkorgar", ekologisk frukt, snabb och enkel leverans!.</p>
-                        <a href="{{url('/frontend/pages.contact')}}" class="btn  blue-background border rounded-pill " style="width: 10rem; padding: .5rem">Kontakta oss</a>
+                        <a href="{{url('frontend.pages.contact')}}" class="btn  blue-background border rounded-pill " style="width: 10rem; padding: .5rem">Kontakta oss</a>
                     </div>
                 </div>
 
                 <div class="row py-5">
-                   @include('/frontendpages.service')
-                    
+                   @include('frontend.pages.service')
                 </div>
             </div>
 

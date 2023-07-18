@@ -1,0 +1,19 @@
+@media only screen and (max-width: 800px) {
+    #staff .row .logo-circel-image {
+        margin-left: 4rem;
+    }
+    .container .row .col-lg-6,
+    .container .row .col-lg-8,
+    .container .row .col-lg-4,
+    .container .row .col-lg-3,
+    .container .row .col-lg-7 {
+        padding-top: 2rem;
+    }
+    .container .row .col {
+        padding: 3rem;
+    }
+    .footer .list-group a {
+        margin-left: 0px;
+        padding: 0;
+    }
+}

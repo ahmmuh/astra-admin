@@ -40,7 +40,7 @@ bra villkor och försäkringar. Nöjd personal och städkvalité hänger ihop.
                             Vi städar allt ifrån butiker, kontor, skolor och trappor, till byggen och byggbodar. Vi fixar 
                             även mattvätt, golvvård ock mycket annat. Hör av er till oss och låt oss hjälpa er!
                         </p>
-                            <a href="{{ url('/frontend/welcome') }}" class="btn btn-block blue-background rounded-pill mt-auto" type="button">Läst mer</a>
+                            <a href="{{ url('frontend.welcome') }}" class="btn btn-block blue-background rounded-pill mt-auto" type="button">Läst mer</a>
                     </div>
                 </div>
                
@@ -60,7 +60,7 @@ bra villkor och försäkringar. Nöjd personal och städkvalité hänger ihop.
                             Fabriksgatan 7 <br>
                             412 50 Göteborg
                         </p>
-                            <a href="{{ url('/frontend/pages.contact') }}" class="btn btn-block blue-background rounded-pill mt-auto" type="button">Läst mer</a>
+                            <a href="{{ url('frontend.pages.contact') }}" class="btn btn-block blue-background rounded-pill mt-auto" type="button">Läst mer</a>
                     </div>
                 </div>
                

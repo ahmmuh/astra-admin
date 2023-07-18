@@ -2,13 +2,14 @@
 
 @section('job')
 <div class="row">
+    <div class="col">
+        Ahmed
+    </div>
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">{{ $job->jobTitle }}</h4>
             <p class="card-text">{{ $job->jobDescription }}</p>
-            <select name="location" disabled class="form-control" id="">
-                <option value="{{$job->location}}">{{$job->location}}</option>
-            </select>
+            Ahmed
             <div class="col d-flex gap-3">
                 <span><strong class="fs-6 text-success p-2">Publicerad{{ $job->publiceradDatum }} </strong></span> | |  
                 <span><strong class="fs-6 text-danger p-2"> Sök senast {{ $job->slutDatum }}</strong></span>

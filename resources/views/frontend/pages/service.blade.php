@@ -29,7 +29,7 @@
                 Kontakta oss för en kostnadsfri offert och svar på dina frågor.
 
                     </p>
-                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/pages.kontor') }}">Läs mer</a>
+                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.kontor') }}">Läs mer</a>
 
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     Kontakta oss för en personlig genomgång!
 
                     </p>
-                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/pages.butik') }}">Läs mer</a>
+                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.butik') }}">Läs mer</a>
                 </div>
             </div>
           
@@ -57,7 +57,7 @@
                     <p class="card-text">
                         Trapphus bli snabbt smutsiga och ofräscha om städningen inte fungerar. När vi tar hand om trappstädningen är du garanterad städning av högsta kvalitet och hög servicenivå. Vi borstar, svabbar, dammar, ta bort fläckar och mycket annat. Vi städar trapphus hos BRF och Fastighetsägare och vi gör det riktigt bra!
                     </p>
-                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/frontend/pages.trapp') }}">Läs mer</a>
+                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.trapp') }}">Läs mer</a>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <p class="card-text">
 Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rutiner för skolstädning, allt ifrån från städteknik och frekvens till miljövänliga städprodukter.           
      </p>
-    <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/frontend/pages.skol') }}">Läs mer</a>
+    <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.skol') }}">Läs mer</a>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                         Prata med oss för offert och personlig genomgång!
 
                     </p>
-                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/frontend/pages.lager') }}">Läs mer</a>
+                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.lager') }}">Läs mer</a>
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                     <p class="card-text">
                     Vill du ha hjälp med fönsterputsning? Våra erfarna fönsterputsare ser till att du får glasklara fönsterrutor till ett riktigt bra pris. Fyll i dina uppgifter nedan så återkommer vi till dig. Eller ring oss gärna på Tel: 
                     </p>
-                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/frontend/pages.window') }}">Läs mer</a>
+                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.window') }}">Läs mer</a>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                                                 Vi utför flyttstädning i hela Göteborgområdet med omnejd. Våra medarbetare är duktiga på flyttstäd i alla former.
                                                  Från mindre lägenhet till stora hus eller kontor!
                                             </p>
-                                                <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/pages.flytt') }}">Läs mer</a>
+                                                <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.flytt') }}">Läs mer</a>
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                         
                                                 Är ni på jakt efter prisvärda fruktkorgar till ert företag? Vi erbjuder fruktkorgar helt efter dina önskemål. Vill du ha frukt varje eller varannan vecka, en eller olika sorters frukt? Oavsett har vi fruktkorgen till dig. Kontakta oss för att hitta rätt fruktkorg för ditt företag.
                                                 </p>
-                                                <a href="{{ url('/frontend/pages.frukt') }}" class="btn btn-block blue-background rounded-pill mt-auto" type="button">Läst mer</a>
+                                                <a href="{{ url('frontend.pages.frukt') }}" class="btn btn-block blue-background rounded-pill mt-auto" type="button">Läst mer</a>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                         Välj golvvård från vårt professionella team. Vi behandlar och rengör alla typer av golv: stengolv, linoleum, trägolv och betong Vi kan även se till att ni alltid har nytvättade, fräscha mattor på kontoret. Alltid bra priser. Alltid bra kvalité. Tveka inte att kontakta oss för kostnadsfri offert!
                         
                                         </p>
-                                            <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/frontend/pages.golv') }}">Läs mer</a>
+                                            <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.golv') }}">Läs mer</a>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                         
                         
                         </p>
-                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/frontend/pages.hemstad') }}">Läs mer</a>
+                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.hemstad') }}">Läs mer</a>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                                         Vill du ha hjälp med att städa upp efter ett bygge eller en renovering? 
                                         Astra Städ är superproffs på byggstäd. Givetvis till bästa pris.
                                     </p>
-                                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('/frontend/pages.bygg') }}">Läs mer</a>
+                                        <a class="btn btn-block blue-background rounded-pill mt-auto" href="{{ url('frontend.pages.bygg') }}">Läs mer</a>
                                 </div>
                             </div>
                         </div>
@@ -194,8 +194,6 @@ Behov av skolstädning? Vi håller er skola välstädad och fin! Vi har goda rut
                     </div>
                 </div>
             </div>
-            
-          
         </div>
     </div>
 </div>

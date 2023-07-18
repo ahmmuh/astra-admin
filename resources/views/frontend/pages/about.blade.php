@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('frontend.layouts.app')
 
 @section('content')
 
@@ -33,8 +33,8 @@
 
     <div class="container">
        <div class="row">
-        @include('/frontend/pages.service')
-        @include('/frontend/pages.galary')
+        @include('frontend.pages.service')
+        @include('frontend.pages.galary')
        </div>
         
         </div>

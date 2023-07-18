@@ -1,5 +1,5 @@
 
-@extends('/frontend/layouts.app')
+@extends('frontend.layouts.app')
 @section('content')
 <style>
     .blue-background{
@@ -33,7 +33,7 @@
                     <p>
                         Vi utför flyttstädning i hela Göteborgområdet med omnejd. Våra medarbetare är duktiga på flyttstäd i alla former. Från mindre lägenhet till stora hus eller kontor!
                     </p>
-                    <a class="blue-background btn" href="{{url('/frontend/pages.contact')}}">Kontakta oss</a>
+                    <a class="blue-background btn" href="{{url('frontend.pages.contact')}}">Kontakta oss</a>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
               
 
                 <div class="col-12">
-                    @include('/frontend/pages.service')
+                    @include('frontend.pages.service')
 
 
                 </div>

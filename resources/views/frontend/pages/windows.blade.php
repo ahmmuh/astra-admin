@@ -18,7 +18,7 @@ mellan engångsputsning eller så kan ni teckna ett abonnemang.
 Alltid skinande rent! Alltid bra priser!
                 
             </p>
-            <a href="{{url('/frontend/pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
+            <a href="{{url('/pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
           </div>
       </div>
     </div>

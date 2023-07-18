@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('frontend.layouts.app')
 @section('content')
 <style>
     .blue-background{
@@ -33,13 +33,13 @@
 Grovstädning utförs direkt efter att byggarbetarna är klara. Finstädning utförs efter att hela byggprojektet är klart. 
 Vill du ha hjälp med byggstädning?  Mejla eller ring oss! Astra Städ är superproffs på byggstäd. 
                     </p>
-                    <a href="{{('/frontend/pages.contact')}}" class="btn blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
+                    <a href="{{('frontend.pages.contact')}}" class="btn blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12">
-                    @include('/frontend/pages.service')
+                    @include('frontend.pages.service')
                 </div>
             </div>
 

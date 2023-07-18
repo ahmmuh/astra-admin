@@ -44,19 +44,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-      @include('/frontend/pages.navbar')
+      @include('frontend.pages.navbar')
       <main>
             @yield('content')
-              @include('/frontend/pages.staff')
+      
+              @include('frontend.pages.staff')
                {{-- @include('pages.service') --}}
 
-              @include('/frontend/pages.logos')    
-              @include('/frontend/pages.map')
-              @include('/frontend/pages.blue-section')
-               @include('/frontend/pages.questions_answers')
+              @include('frontend.pages.logos')    
+              @include('frontend.pages.map')
+              @include('frontend.pages.blue-section')
+               @include('frontend.pages.questions_answers')
             </main>
 
-            @include('/frontend/pages.footer')
+            @include('frontend.pages.footer')
 
 </body>
 </html>

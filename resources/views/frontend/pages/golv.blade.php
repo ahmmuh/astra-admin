@@ -19,7 +19,7 @@
 Välj golvvård från vårt professionella team. Vi behandlar och rengör alla typer av golv: stengolv, linoleum, trägolv och betong Vi kan även se till att ni alltid har nytvättade, fräscha mattor på kontoret. Alltid bra priser. Alltid bra kvalité. Tveka inte att kontakta oss för kostnadsfri offert!
 
             </p>
-            <a href="{{url('/frontend/pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
+            <a href="{{url('frontend.pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
           </div>
       </div>
     </div>
@@ -36,12 +36,12 @@ Välj golvvård från vårt professionella team. Vi behandlar och rengör alla t
                     <p>
                         Behöver era golv fräschas upp? Välj golvvård från vårt professionella team. Vi behandlar och rengör alla typer av golv: stengolv, linoleum, trägolv och betong Vi kan även se till att ni alltid har nytvättade, fräscha mattor på kontoret. Alltid bra priser. Alltid bra kvalité. Tveka inte att kontakta oss för kostnadsfri offert!
                     </p>
-                    <a href="{{url('/frontend/pages.contact')}}" class="btn blue-background">Kontakta oss</a>
+                    <a href="{{url('frontend.pages.contact')}}" class="btn blue-background">Kontakta oss</a>
                 </div>
             </div>
 
 
-           @include('/frontendpages.galary')
+           @include('frontend.pages.galary')
         </div>
 
 @endsection

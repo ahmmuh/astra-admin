@@ -16,6 +16,7 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ApplicationControllerAPI;
+use App\Http\Controllers\ClientJobController;
 
 use App\Http\Controllers\MailController;
 use \App\Mail\ContactMail;
@@ -31,6 +32,8 @@ use \App\Mail\ContactMail;
 |
 */
 
+Route::get('/frontend/jobs', [ClientJobController::class,'index'])->name('jobs');
+// Route::get('/frontend/{id}', [ClientJobController::class,'show'])->name('show');
 Route::get('/', [HomeController::class,'test']);
 // Route::get('/', function () {
 //     return view('welcome');

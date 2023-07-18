@@ -1,4 +1,4 @@
-@extends('/frontend/layouts.app')
+@extends('frontend.layouts.app')
 @section('content')
 <style>
     .blue-background{
@@ -20,7 +20,7 @@ Alltid utbildad personal med riktiga löner och kollektivavtal.
 Kontakta oss för en kostnadsfri offert!
 
             </p>
-            <a href="{{url('/frontend/pages.contact')}}" class="btn  blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
+            <a href="{{url('frontend.pages.contact')}}" class="btn  blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
           </div>
       </div>
     </div>
@@ -42,14 +42,14 @@ Alltid utbildad personal med riktiga löner och kollektivavtal.
 Kontakta oss för en kostnadsfri offert
 
                     </p>
-                    <a href="{{url('/frontend/pages.contact')}}" class="btn blue-background rounded-pill" style="width: 20rem;">Kontakta oss</a>
+                    <a href="{{url('frontend.pages.contact')}}" class="btn blue-background rounded-pill" style="width: 20rem;">Kontakta oss</a>
                 </div>
             </div>
 
            
 
             <div class="row">
-                @include('/frontend/pages.service')
+                @include('frontend.pages.service')
             </div>
 
             

@@ -1,4 +1,4 @@
-@extends('/frontend/layouts.app')
+@extends('frontend.layouts.app')
 @section('content')
 <style>
     .blue-background{
@@ -17,7 +17,7 @@
 Prata med oss för offert och personlig genomgång!
 
             </p>
-            <a href="{{url('/frontend/pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
+            <a href="{{url('frontend.pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
           </div>
       </div>
     </div>
@@ -34,14 +34,14 @@ Prata med oss för offert och personlig genomgång!
                     <p>
                         Vi städar allt! Med Astra Städ får ni professionell industristädning, oavsett er storlek och bransch. Bland våra kunder finns både stora och små företag. I oss får ni en pålitlig städpartner med snabb och bra support. Prata med oss för offert och personlig genomgång!
                     </p>
-                    <a href="{{url('/frontend/pages.contact')}}" class="btn blue-background">Kontakta oss</a>
+                    <a href="{{url('frontend.pages.contact')}}" class="btn blue-background">Kontakta oss</a>
                 </div>
             </div>
 
           
             
 
-            @include('/frontendpages.galary')
+            @include('frontend.pages.galary')
         </div>
 
 @endsection

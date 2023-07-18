@@ -5,19 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use DB;
-class JobsController extends Controller
+class ClientJobController extends Controller
 {
     /**
   */
 
-//   public function __construct()
-// {
-//     $this->middleware('auth');
-// }
+
     public function index()
     {
     $jobs =  Job::latest()->simplePaginate(5);
-       return view('jobs.index', compact('jobs'));
+       return view('frontend.pages.job', compact('jobs'));
     }
 
     /**
@@ -25,10 +22,12 @@ class JobsController extends Controller
      */
    public function create()
     {
-        return view('jobs.create');
+      return view('frontend.job');
     }
 
-
+    public function routeTest(){
+    return "Welcome";
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -63,7 +62,7 @@ class JobsController extends Controller
     public function show($id)
     {   
         $job = Job::findOrFail($id);
-        return view('jobs.show',compact('job'));
+        return view('frontend.jobs.show',compact('job'));
     }
  
 

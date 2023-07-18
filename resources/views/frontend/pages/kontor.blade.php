@@ -1,4 +1,4 @@
-@extends('/frontend/layouts.app')
+@extends('frontend.layouts.app')
 @section('content')
 <style>
     .blue-background{
@@ -37,7 +37,7 @@ Kontakta oss för en kostnadsfri offert och svar på dina frågor.
                         Kontakta oss för en kostnadsfri offert och svar på dina frågor.
 
                     </p>
-                    <a href="{{('/frontend/pages.contact')}}" class="btn blue-background">Kontakta oss</a>
+                    <a href="{{('frontend.pages.contact')}}" class="btn blue-background">Kontakta oss</a>
                 </div>
             </div>
 
@@ -52,7 +52,7 @@ möjliga service. Vi fokuserar alltid på det som är bäst för dig som kund.
             </div>
             <hr>
         
-           @include('/frontend/pages.service')
+           @include('frontend.pages.service')
         </div>
 
 @endsection

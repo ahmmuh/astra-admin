@@ -13,7 +13,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body modal-form">
-                @include('pages.form')
+                @include('frontend.pages.form')
             </div>
     
         </div>

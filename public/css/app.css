@@ -1,0 +1,309 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        position: relative;
+        background-color: whitesmoke !important;
+    }
+    
+    h1 {
+        color: black;
+    }
+    
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+    
+    * h3,
+    h4,
+    h2,
+    h6 {
+        font-family: 'Crimson Text', serif;
+    }
+    
+    .navbar,
+    .navbar ul {
+        background-color: #0090db;
+    }
+    
+    .navbar a,
+    .navbar ul li a {
+        color: white;
+    }
+    
+    .container .row {
+        margin-top: 3rem;
+    }
+    
+    .list-group a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+    
+    .container .blue-background {
+        background-color: #0090db;
+        color: white;
+    }
+    
+    .container .blue-background:hover {
+        background-color: black;
+        color: white;
+    }
+    
+    .col .md-image {
+        width: 250px;
+    }
+    
+    #about .md-image {
+        width: 100%;
+    }
+    
+    #about-good-service-section {
+        background-color: #e1e1e1;
+        padding: 5rem;
+        margin-top: 1rem;
+        max-width: 100%;
+    }
+    /* //logos style */
+    
+    #logos .logo-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    #about .about-history {
+        width: 50%;
+    }
+    
+    .container .row .col .start-card {
+        width: 60%;
+        background-color: #0090db;
+        color: white;
+        padding: 2rem;
+        display: none;
+    }
+    
+    .container .row .col .start-card .btn {
+        background-color: #fff;
+        color: black;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .car #first_page_form {
+        background-color: #0090db;
+        width: 55%;
+        /* padding: .5rem; */
+    }
+    
+    .kontor-bg {
+        background-image: url('../images/kontor1.jpeg');
+        background-size: 100%;
+        background-position: center;
+        height: 60vh;
+    }
+    
+    #trapp-bg {
+        background-image: url(../images/images-shaqo/trapp1.jpg);
+    }
+    
+    #bg-skola {
+        background-image: url(../images/images-shaqo/skola2.jpeg);
+    }
+    
+    .md-image {
+        width: 270px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 4rem;
+    }
+    /* //personal bilder */
+    
+    #staff .logo-circel-image {
+        background-image: url(../images/astra-logos/logo6.jpg);
+        width: 270px;
+        height: 270px;
+        border-radius: 100%;
+    }
+    /* //modal form */
+    
+    .modal {
+        border: 0;
+        border-radius: 2rem;
+        padding: 2rem;
+    }
+    
+    .modal-body,
+    .modal-header {
+        background-color: #0090db;
+        padding: 2rem;
+    }
+    /* kontor style */
+    
+    .kontor-bg {
+        background-image: url('../images/matt.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 60vh;
+        position: absolute;
+        top: 60px;
+    }
+    /* submit-btn */
+    
+    .btn-light {
+        background-color: #fff;
+        width: 100%;
+    }
+    /* map */
+    
+    iframe {
+        width: 100%;
+        height: 400px;
+    }
+    /* //footer */
+    
+    .footer {
+        background-color: #0090db;
+        padding: 2rem;
+    }
+    
+    .footer .container .row .col-lg-3 .list-group a,
+    .footer .container .row .col-lg-3 .list-group a {
+        background-color: transparent;
+        color: white;
+        border: none;
+    }
+    
+    #flytt-bg {
+        background-image: url(../images/images-shaqo/flytt2.jpeg);
+    }
+    
+    #home-page-slider {
+        background-image: url(../images/images-shaqo/test2.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    #hem-bg {
+        background-image: url(../images/images-shaqo/home.jpg);
+    }
+    
+    #golv-bg {
+        background-image: url(../images/images-shaqo/golv.jpeg);
+    }
+    
+    #bygg-bg {
+        background-image: url(../images/images-shaqo/bygg.jpeg);
+    }
+    
+    #kontor-bg {
+        background-image: url(../images/images-shaqo/kontor1.jpeg);
+    }
+    
+    #matt-bg {
+        background-image: url(../images/images-shaqo/matt2.jpeg);
+    }
+    
+    #lager-bg {
+        background-image: url(../images/astra-logos/logo12.jpg);
+    }
+    
+    #frukt-bg {
+        background-image: url(../images/images-shaqo/frukt.jpg);
+    }
+    
+    #butik-bg {
+        background-image: url(../images/images-shaqo/dukaan2.png);
+    }
+    
+    #home-page-slider,
+    #fonster-bg,
+    #flytt-bg,
+    #kontor-bg,
+    #lager-bg,
+    #bygg-bg,
+    #hem-bg,
+    #butik-bg,
+    #golv-bg,
+    #matt-bg,
+    #trapp-bg,
+    #frukt-bg,
+    #bg-skola {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 85vh;
+        /* padding-bottom: 4rem; */
+    }
+    
+    #fonster-bg {
+        background-image: url(../images/images-shaqo/fonster.jpeg);
+        position: relative;
+        height: 100vh;
+    }
+    
+    #home-page-slider .carousel-item {
+        color: white;
+        height: 30rem;
+        /* position: relative; */
+    }
+    
+    #fonster-bg,
+    #flytt-bg,
+    #kontor-bg,
+    #lager-bg,
+    #bygg-bg,
+    #hem-bg,
+    #butik-bg,
+    #golv-bg,
+    #matt-bg .btn {
+        background-color: #0090db;
+    }
+    
+    #logo-slider-container {
+        text-align: center;
+        padding-bottom: 0.6rem;
+    }
+    
+    #logo-slider-container .carousel-inner .carousel-item {
+        padding: 3rem;
+        background-image: linear-gradient(to right, rgba(226, 229, 232, 0.13), rgba(7, 11, 7, 0.712), rgba(54, 95, 54, 0));
+    }
+    
+    #service-slider-container {
+        background-image: linear-gradient(to right, rgba(244, 245, 245, 0.404), rgba(246, 249, 249, 0.397), rgba(242, 245, 245, 0.473));
+        padding: 0rem 2rem;
+    }
+    
+    #service-slider-container .carousel-indicators button {
+        background-color: #0090db;
+    }
+    
+    #service-slider-container .carousel-indicators .active {
+        background-color: rgb(114, 10, 58);
+    }
+    
+    service-slider-container .carousel-indicators .active {
+        background-color: rgb(114, 10, 58);
+    }
+    
+    .galary img {
+        transform: scale(1);
+    }
+    
+    .galary img:hover {
+        transform: scale(1.1);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+        cursor: pointer;
+    }
+    
+    .carousel slide {
+        background-color: red;
+        color: red;
+        /* margin-top: -10rem; */
+    }

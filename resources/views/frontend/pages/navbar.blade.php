@@ -18,9 +18,9 @@
               Privat
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.windows') }}">Fönsterputsning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.flytt') }}">Flyttstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.hemstad') }}">Hemstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.windows') }}">Fönsterputsning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.flytt') }}">Flyttstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.hemstad') }}">Hemstädning</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -28,16 +28,16 @@
               Tjänster
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.kontor') }}">Kontorsstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.skol') }}">Skolstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.trapp') }}">Trappstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.butik') }}">Butikstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.bygg') }}">Byggstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.golv') }}">Golvvård</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.lager') }}">Lagerstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.frukt') }}">Fruktkorg</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.windows') }}">Fönsterputsning</a></li>
-              <li><a class="dropdown-item" href="{{ url('/frontend/pages.matta') }}">Mattservice</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.kontor') }}">Kontorsstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.skol') }}">Skolstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.trapp') }}">Trappstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.butik') }}">Butikstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.bygg') }}">Byggstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.golv') }}">Golvvård</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.lager') }}">Lagerstädning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.frukt') }}">Fruktkorg</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.windows') }}">Fönsterputsning</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.matta') }}">Mattservice</a></li>
 
             </ul>
           </li>
@@ -45,15 +45,17 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/frontend/pages.job') }}">Jobba hos oss</a>
+            <a class="nav-link" href="{{ URL::route('jobs') }}">Jobba hos oss</a>
+            {{-- <a href="{{ URL::route('register') }}" >Register 1</a> --}}
+
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/frontend/pages.about') }}">Om oss</a>
+            <a class="nav-link" href="{{ url('frontend.pages.about') }}">Om oss</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/frontend/pages.contact') }}">Kontakt</a>
+            <a class="nav-link" href="{{ url('frontend.pages.contact') }}">Kontakt</a>
           </li>
         </ul>
       </div>

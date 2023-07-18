@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('frontend.layouts.app')
 @section('content')
 <style>
   .blue-background{
@@ -18,7 +18,7 @@
               Nöjda kunder är bästa reklamen. Intrycket kunden får i butiken och hur välstädat
               det är A och O. Låt oss sköta städet åt er. Vi ger er professionella städare till mycket rimliga priser.
             </p>
-            <a href="{{('/frontend/pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
+            <a href="{{('frontend.pages.contact')}}" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
           </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
                       till kunden att besluta om
 
                     </p>
-                    <a href="{{('/frontend/pages.contact')}}" class="btn  blue-background rounded-pill" style="width: 15rem">Kontakta oss</a>
+                    <a href="{{('frontend.pages.contact')}}" class="btn  blue-background rounded-pill" style="width: 15rem">Kontakta oss</a>
                 </div>
             </div>
 
