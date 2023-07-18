@@ -12,16 +12,18 @@ class ServiceController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function __construct()
-{
-    $this->middleware('auth');
-}
+//     public function __construct()
+// {
+//     $this->middleware('auth');
+// }
     public function index()
     {
         
         $services = Service::all();
         return view('services.index',compact('services'));
     }
+
+  
 
     /**
      * Show the form for creating a new resource.

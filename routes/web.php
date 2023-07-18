@@ -11,6 +11,7 @@ use App\Http\Controllers\JobsControllerAPI;
 
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceControllerAPI;
+use App\Http\Controllers\HomeController;
 
 
 use App\Http\Controllers\ApplicationController;
@@ -30,9 +31,10 @@ use \App\Mail\ContactMail;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'test']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/home', function () {
     return view('home');
@@ -40,9 +42,9 @@ Route::get('/home', function () {
 
 Route::get('send', [ContactMail::class,'envelope']);
 
-Route::get('/order',function(){
-    return new OrderMail();
-});
+// Route::get('/order',function(){
+//     return new OrderMail();
+// });
 
 Auth::routes();
 Route::resource('blogs', BlogController::class);
@@ -52,9 +54,3 @@ Route::resource('services', ServiceController::class);
 Route::resource('applications', ApplicationController::class);
 
 
-//API endpoints
-
-Route::resource('api/blogs', BlogControllerAPI::class);
-Route::resource('api/services', ServiceControllerAPI::class);
-Route::resource('api/jobs', JobsControllerAPI::class);
-Route::resource('api/applications', ApplicationControllerAPI::class);

@@ -26,8 +26,11 @@ class HomeController extends Controller
     //     return view('welcome');
     // }
 
-      public function home()
-    {
-        return view('home');
+    //   public function home()
+    // {
+    //     return view('home');
+    // }
+      public function test(){
+        return view('frontend.welcome');
     }
 }
