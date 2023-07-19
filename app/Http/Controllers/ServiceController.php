@@ -20,7 +20,7 @@ class ServiceController extends Controller
     {
         
         $services = Service::all();
-        return view('services.index',compact('services'));
+        return view('backend.services.index',compact('services'));
     }
 
   
@@ -30,7 +30,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('services.create');
+        return view('backend.services.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class ServiceController extends Controller
     public function edit($id)
     {
        $service = Service::findOrFail($id);
-        return view('services.edit',compact('service'));
+        return view('backend.services.edit',compact('service'));
     }
 
     /**

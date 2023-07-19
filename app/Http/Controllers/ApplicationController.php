@@ -17,7 +17,7 @@ class ApplicationController extends Controller
     public function index()
     {
         $applications = Application::orderBy('id', 'DESC')->get();
-      return view('applications.index',compact('applications'));
+      return view('backend.applications.index',compact('applications'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ApplicationController extends Controller
     public function create()
     {
         $jobs = Job::all();
-        return view('applications.create',compact('jobs'));
+        return view('backend.applications.create',compact('jobs'));
     }
 
 
@@ -56,7 +56,7 @@ class ApplicationController extends Controller
     ]
     );
         Application::create($request->all());
-        return redirect()->route('applications.index')->with('success','Din ansökan har nu skickats, Vi återkommer till dig inom kort');
+        return redirect()->route('backend.applications.index')->with('success','Din ansökan har nu skickats, Vi återkommer till dig inom kort');
         
     }
 
@@ -68,7 +68,7 @@ class ApplicationController extends Controller
     public function show($id)
     {   
         $application = Application::findOrFail($id);
-        return view('applications.show',compact('application'));
+        return view('backend.applications.show',compact('application'));
     }
  
 
@@ -79,7 +79,7 @@ class ApplicationController extends Controller
     public function edit($id)
     {
         $application = Application::findOrFail($id);
-        return view('applications.edit',compact('applications'));
+        return view('backend.applications.edit',compact('applications'));
     }
 
    
@@ -109,7 +109,7 @@ class ApplicationController extends Controller
     ]);
 
             $application->update($request->all());
-             return redirect()->route('application.index')->with('success','En ansökan uppdaterades');
+             return redirect()->route('backend.application.index')->with('success','En ansökan uppdaterades');
      }
 
      
@@ -118,7 +118,7 @@ class ApplicationController extends Controller
     {
         $application = Application::findOrFail($id);
         $application->delete();
-        return redirect()->route('applications.index')->with('danger','En jobbansökan togs bort');
+        return redirect()->route('backend.applications.index')->with('danger','En jobbansökan togs bort');
 
     }
  

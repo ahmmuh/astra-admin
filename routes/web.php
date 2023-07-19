@@ -30,9 +30,9 @@ use \App\Mail\ContactMail;
 Route::get('/frontend/jobs', [ClientJobController::class,'index'])->name('jobs');
 
 // Route::get('/frontend/jobs', [ClientJobController::class,'index']);
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::get('/home', function () {
     return view('home');

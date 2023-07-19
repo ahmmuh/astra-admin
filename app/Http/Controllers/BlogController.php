@@ -18,7 +18,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs =  Blog::latest()->simplePaginate(3);
-        return view('blogs.index',compact('blogs'));
+        return view('backend.blogs.index',compact('blogs'));
     }
     
     /**
@@ -26,7 +26,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blogs.create');
+        return view('backend.blogs.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -56,7 +56,7 @@ class BlogController extends Controller
         $blog->blogImage = $img_name;
         Storage::disk('public')->put('images/'.$img_name, file_get_contents($img));
         $blog->save();
-         return redirect()->route('blogs.index')->with('success','Nyhet har nu publicerats');
+         return redirect()->route('backend.blogs.index')->with('success','Nyhet har nu publicerats');
     }
 
     /**
@@ -65,7 +65,7 @@ class BlogController extends Controller
     public function show($id)
     {   
         $blog = Blog::findOrFail($id);
-        return view('blogs.show',compact('blog'));
+        return view('backend.blogs.show',compact('blog'));
     }
  
 
@@ -76,7 +76,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::findOrFail($id);
-        return view('blogs.edit',compact('blog'));
+        return view('backend.blogs.edit',compact('blog'));
     }
 
    
@@ -114,7 +114,7 @@ class BlogController extends Controller
         'description' => $blog->description,
         'blogImage' => $blog->blogImage,
     ]);
-    return redirect()->route('blogs.index')->with('success','Nyheten har uppdaterats');
+    return redirect()->route('backend.blogs.index')->with('success','Nyheten har uppdaterats');
 
      }
 
@@ -124,7 +124,7 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $blog->delete();
-        return redirect()->route('blogs.index')->with('danger','En nyhet har nu raderats');
+        return redirect()->route('backend.blogs.index')->with('danger','En nyhet har nu raderats');
 
     }
 }

@@ -17,7 +17,7 @@ class JobsController extends Controller
     public function index()
     {
     $jobs =  Job::latest()->simplePaginate(5);
-       return view('jobs.index', compact('jobs'));
+       return view('backend.jobs.index', compact('jobs'));
     }
 
     /**
@@ -25,7 +25,7 @@ class JobsController extends Controller
      */
    public function create()
     {
-        return view('jobs.create');
+        return view('backend.jobs.create');
     }
 
 
