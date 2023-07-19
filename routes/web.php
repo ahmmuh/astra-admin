@@ -1,22 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientContactController;
 
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\BlogControllerAPI;
 
 use App\Http\Controllers\JobsController;
-use App\Http\Controllers\JobsControllerAPI;
-
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\ServiceControllerAPI;
 use App\Http\Controllers\HomeController;
 
-
-use App\Http\Controllers\ApplicationController;
-use App\Http\Controllers\ApplicationControllerAPI;
 use App\Http\Controllers\ClientJobController;
+use App\Http\Controllers\ApplyJobController;
+use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\MailController;
 use \App\Mail\ContactMail;
@@ -33,8 +28,8 @@ use \App\Mail\ContactMail;
 */
 
 Route::get('/frontend/jobs', [ClientJobController::class,'index'])->name('jobs');
-// Route::get('/frontend/{id}', [ClientJobController::class,'show'])->name('show');
-Route::get('/', [HomeController::class,'test']);
+
+// Route::get('/frontend/jobs', [ClientJobController::class,'index']);
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -42,6 +37,16 @@ Route::get('/', [HomeController::class,'test']);
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/clear', function () {
+   $clearcache = Artisan::call('cache:clear');
+   Artisan::call('route:clear'); 
+   Artisan::call('config:clear'); 
+   Artisan::call('view:clear'); 
+});
+
+
+
 
 Route::get('send', [ContactMail::class,'envelope']);
 
@@ -51,9 +56,10 @@ Route::get('send', [ContactMail::class,'envelope']);
 
 Auth::routes();
 Route::resource('blogs', BlogController::class);
-Route::resource('clients', ClientContactController::class);
 Route::resource('jobs', JobsController::class);
 Route::resource('services', ServiceController::class);
 Route::resource('applications', ApplicationController::class);
+Route::resource('apply', ApplyJobController::class);
+Route::resource('contacts', ContactController::class);
 
 

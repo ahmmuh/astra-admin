@@ -47,6 +47,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ URL::route('jobs') }}">Jobba hos oss</a>
             {{-- <a href="{{ URL::route('register') }}" >Register 1</a> --}}
+            {{-- <a href="#">Jobb</a> --}}
 
           </li>
 
@@ -55,7 +56,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('frontend.pages.contact') }}">Kontakt</a>
+            <a class="nav-link" href="{{ url('contacts') }}">Kontakt</a>
           </li>
         </ul>
       </div>

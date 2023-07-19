@@ -53,7 +53,7 @@ class JobsController extends Controller
         
        
           Job::create($request->all());
-         return redirect()->route('jobs.index')->with('success','Tjänsten utannonserats');
+         return redirect()->route('backend.jobs.index')->with('success','Tjänsten utannonserats');
         
     }
 
@@ -63,7 +63,7 @@ class JobsController extends Controller
     public function show($id)
     {   
         $job = Job::findOrFail($id);
-        return view('jobs.show',compact('job'));
+        return view('backend.jobs.show',compact('job'));
     }
  
 
@@ -74,7 +74,7 @@ class JobsController extends Controller
     public function edit($id)
     {
         $job = Job::findOrFail($id);
-        return view('jobs.edit',compact('job'));
+        return view('backend.jobs.edit',compact('job'));
     }
 
    
@@ -111,7 +111,7 @@ class JobsController extends Controller
     {
         $job = Job::findOrFail($id);
         $job->delete();
-        return redirect()->route('jobs.index')->with('danger','En tjänst har nu raderats');
+        return redirect()->route('backend.jobs.index')->with('danger','En tjänst har nu raderats');
 
     }
 }

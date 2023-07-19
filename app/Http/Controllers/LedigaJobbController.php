@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ContactControllerAPI extends Controller
+class LedigaJobbController extends Controller
 {
     /**
      * Display a listing of the resource.
