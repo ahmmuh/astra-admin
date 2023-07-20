@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Models\Contact;
-
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class ClientContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-   public function index()
+     public function index()
     {
-    $contacts = Contact::latest()->get();
-
-        return view('backend.contacts.index', compact('contacts'));
+        return view('frontend.contacts.index');
     }
 
     /**
@@ -22,7 +19,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-       return view('backend.contacts.create');
+        //
     }
 
     /**
@@ -32,7 +29,7 @@ class ContactController extends Controller
     {
         
        $contacts = Contact::create($request->all());
-        return view('backend.contacts.index');
+        return $contacts;
     }
 
     /**
@@ -41,7 +38,7 @@ class ContactController extends Controller
   public function show($id)
     {   
         $contact = Contact::findOrFail($id);
-        return view('backend.contacts.show',compact('contact'));
+        return view('frontend.contacts.show',compact('contact'));
     }
 
     /**
@@ -58,7 +55,7 @@ class ContactController extends Controller
     public function update(Request $request, Contact $contact)
     {
        $contact->update($request->all());
-             return redirect()->route('backend.contacts.index')->with('success','Ny kontaktuppgift har sparats');
+             return redirect()->route('frontend.contacts.index')->with('success','Ny kontaktuppgift har sparats');
     }
 
     /**
@@ -68,6 +65,6 @@ class ContactController extends Controller
     {
       $contact = Contact::findOrFail($id);
         $contact->delete();
-        return redirect()->route('contacts.index')->with('danger','Kontaktuppgifter raderades');
+        return redirect()->route('frontend.contacts.index')->with('danger','Kontaktuppgifter raderades');
     }
 }
