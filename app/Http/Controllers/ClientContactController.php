@@ -11,7 +11,9 @@ class ClientContactController extends Controller
      */
      public function index()
     {
-        return view('frontend.contacts.index');
+        $contacts = Contact::latest()->get();
+        return view('frontend.contacts.index', compact('contacts'));
+
     }
 
     /**

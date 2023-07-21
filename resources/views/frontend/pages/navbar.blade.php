@@ -18,9 +18,10 @@
               Privat
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.windows') }}">Fönsterputsning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.flytt') }}">Flyttstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.hemstad') }}">Hemstädning</a></li>
+              @foreach ($private_services as $service)
+              
+              <li><a class="dropdown-item" href="{{ route('privateservices.show',$service->id) }}">{{$service->title}}</a></li>
+              @endforeach
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -28,8 +29,11 @@
               Tjänster
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.kontor') }}">Kontorsstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.skol') }}">Skolstädning</a></li>
+              
+              @foreach ($services as $service)
+              <li><a class="dropdown-item" href="{{ route('services.show', $service->id) }}" >{{$service->title}}</a></li>
+              @endforeach
+              {{-- <li><a class="dropdown-item" href="{{ url('frontend.pages.skol') }}">Skolstädning</a></li>
               <li><a class="dropdown-item" href="{{ url('frontend.pages.trapp') }}">Trappstädning</a></li>
               <li><a class="dropdown-item" href="{{ url('frontend.pages.butik') }}">Butikstädning</a></li>
               <li><a class="dropdown-item" href="{{ url('frontend.pages.bygg') }}">Byggstädning</a></li>
@@ -37,7 +41,7 @@
               <li><a class="dropdown-item" href="{{ url('frontend.pages.lager') }}">Lagerstädning</a></li>
               <li><a class="dropdown-item" href="{{ url('frontend.pages.frukt') }}">Fruktkorg</a></li>
               <li><a class="dropdown-item" href="{{ url('frontend.pages.windows') }}">Fönsterputsning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.matta') }}">Mattservice</a></li>
+              <li><a class="dropdown-item" href="{{ url('frontend.pages.matta') }}">Mattservice</a></li> --}}
 
             </ul>
           </li>
@@ -56,7 +60,10 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('contacts') }}">Kontakt</a>
+            <a class="nav-link" href="{{ url('clientcontacts') }}">Kontakt</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('clientblogs') }}">Nyhet</a>
           </li>
         </ul>
       </div>

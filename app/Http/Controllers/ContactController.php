@@ -30,6 +30,21 @@ class ContactController extends Controller
      */
    public function store(Request $request)
     {
+        $request->validate([
+            'telefon' => 'required',
+            'email' => 'required',
+            'adress' => 'required',
+            'postNummer' => 'required',
+            'ort' => 'required',
+
+        ],
+     [
+        'telefon.required' => 'Skriv telefonnummer',
+        'email.required' => 'E-postadress saknas',
+        'adress.required' => 'Vilken address?',
+        'postNummer.required' => 'Postnummer?',
+        'ort.required' => 'Vilken ort',
+    ]);
         
        $contacts = Contact::create($request->all());
         return view('backend.contacts.index');
@@ -49,7 +64,8 @@ class ContactController extends Controller
      */
     public function edit(string $id)
     {
-        //
+         $contact = Contact::findOrFail($id);
+        return view('backend.contacts.edit',compact('contact'));
     }
 
     /**
@@ -57,8 +73,24 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
+        $request->validate([
+            'telefon' => 'required',
+            'email' => 'required',
+            'adress' => 'required',
+            'postNummer' => 'required',
+            'ort' => 'required',
+
+        ],
+     [
+        'telefon.required' => 'Skriv telefonnummer',
+        'email.required' => 'E-postadress saknas',
+        'adress.required' => 'Vilken address?',
+        'postNummer.required' => 'Postnummer?',
+        'ort.required' => 'Vilken ort',
+    ]);
+        
        $contact->update($request->all());
-             return redirect()->route('backend.contacts.index')->with('success','Ny kontaktuppgift har sparats');
+             return redirect()->route('contacts.index')->with('success','Ny kontaktuppgift har sparats');
     }
 
     /**

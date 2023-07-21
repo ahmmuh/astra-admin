@@ -12,7 +12,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientJobController;
 use App\Http\Controllers\ApplyJobController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\ClientContactController;
+use App\Http\Controllers\ClientBlogController;
+use App\Http\Controllers\PrivatServiceController;
 use App\Http\Controllers\MailController;
 use \App\Mail\ContactMail;
 
@@ -65,5 +67,8 @@ Route::resource('services', ServiceController::class);
 Route::resource('applications', ApplicationController::class);
 Route::resource('apply', ApplyJobController::class);
 Route::resource('contacts', ContactController::class);
+Route::resource('clientcontacts', ClientContactController::class);
+Route::resource('clientblogs', ClientBlogController::class);
+Route::resource('privateservices', PrivatServiceController::class);
 
 

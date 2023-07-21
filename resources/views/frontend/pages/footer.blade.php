@@ -8,10 +8,26 @@
                 På Astra Städ är vi proffs på städning. Vi är ett litet personligt städbolag. Varje månad utför vi löpande städuppdrag hos över 40 fasta företag i Göteborg.
             </p>
         </div>
+            @foreach ($contacts as $contact)
         <div class="col-lg-3 col-md-6 mb-3">
-            <h5>Adress</h5>
-            <p>Fabriksgatan 7 <br> 412 50 Göteborg <br>Öppettider: 6:00 - 17:00 <br> helgfria vardagar</p>
+            <h5>{{$contact->adress}}</h5>
+            <p>{{$contact->postNummer}} <br> {{$contact->ort}} <br> Öppettider: 6:00 - 17:00 <br> helgfria vardagar</p>
         </div>
+             @endforeach
+
+        {{-- <div class="col-lg-3 col-md-6 mb-3">
+        @foreach ($contacts as $contact)
+              <div class="col-md-12 d-flex justify-content-between">
+                  <span>{{$contact->adress}} <br> {{$contact->ort}} <br>
+                     {{$contact->postNummer}}</span> <br>
+                  <p>Orgnr. 559264-4446</p> <br>
+                  <p>{{$contact->telefon}}</p> <br>
+                  <p>{{$contact->email}}</p> <br>
+                </div> --}}
+                {{-- <h5>Adress</h5>
+                <p>Fabriksgatan 7 <br> 412 50 Göteborg <br>Öppettider: 6:00 - 17:00 <br> helgfria vardagar</p> --}}
+           
+        {{-- </div> --}}
 
         <div class="col-lg-3 col-md-6 mb-3">
             <div class="list-group">

@@ -1,26 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Service;
+use App\Models\PrivateService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use DB;
-
-class ServiceController extends Controller
+use Auth;
+class PrivatServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-//     public function __construct()
-// {
-//     $this->middleware('auth');
-// }
     public function index()
     {
         
-        $services = Service::all();
-        return view('backend.services.index',compact('services'));
+        $services = PrivateService::all();
+        return view('backend.privateservice.index',compact('services'));
     }
 
   
@@ -30,7 +25,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('backend.services.create');
+        return view('backend.privateservice.create');
     }
 
     /**
@@ -56,7 +51,7 @@ class ServiceController extends Controller
         
         $img = $request->serviceImage;
         $img_name = $img->getClientOriginalName();
-        $service = new Service();
+        $service = new PrivateService();
         $service->title = $request->title;
         $service->bodyText = $request->bodyText;
         $service->description = $request->description;
@@ -64,7 +59,7 @@ class ServiceController extends Controller
         $service->serviceImage = $img_name;
         Storage::disk('public')->put('images/serviceImages'.$img_name, file_get_contents($img));
          $service->save();
-        return redirect()->route('services.index')->with('success','En tjänst har lagts till på hemsidan');
+        return redirect()->route('privateservices.index')->with('success','En tjänst har lagts till på hemsidan');
     }
 
     /**
@@ -72,8 +67,16 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-     $service = Service::findOrFail($id);
-     return view('frontend.services.show',compact('service'));
+     $service = PrivateService::findOrFail($id);
+     if (Auth::check()) {
+       return view('backend.privateservice.show',compact('service'));
+
+     } else {
+        # code...
+        return view('frontend.privateservice.show',compact('service'));
+
+     }
+     
     }
 
     /**
@@ -81,14 +84,14 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-       $service = Service::findOrFail($id);
-        return view('backend.services.edit',compact('service'));
+       $service = PrivateService::findOrFail($id);
+        return view('backend.privateservice.edit',compact('service'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, PrivateService $service)
     {
            $request->validate([
             'title' => 'required:max:10',
@@ -127,7 +130,7 @@ class ServiceController extends Controller
     ]);
       
         // $service->update($request->all());
-     return redirect()->route('services.index')->with('success' ,'Tjänsten har uppdaterats');
+     return redirect()->route('privateservices.index')->with('success' ,'Tjänsten har uppdaterats');
     }
 
     /**
@@ -135,8 +138,8 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-          $service = Service::findOrFail($id);
+          $service = PrivateService::findOrFail($id);
         $service->delete();
-        return redirect()->route('services.index')->with('danger','En tjänst har nu raderats');
+        return redirect()->route('privateservices.index')->with('danger','En tjänst har nu raderats');
     }
 }
