@@ -56,7 +56,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('frontend.pages.about') }}">Om oss</a>
+            <a class="nav-link" href="{{ url('abouts') }}">Om oss</a>
           </li>
 
           <li class="nav-item">

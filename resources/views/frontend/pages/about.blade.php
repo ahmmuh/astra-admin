@@ -6,7 +6,8 @@
     <div class="container">
         <div class="row " id="about-first-section">
             <div class="col-lg-5 col-md-12">
-                <img src="{{url('')}}" alt="">
+                <img src="{{url('')}}" alt="Image"> Image
+                
             </div>
             <div class="col-lg-7 col-md-12">
                 <h2>Om Astra Städ AB</h2>

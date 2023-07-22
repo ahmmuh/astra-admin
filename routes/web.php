@@ -8,6 +8,8 @@ use App\Http\Controllers\JobsController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\LogoController;
 
 use App\Http\Controllers\ClientJobController;
 use App\Http\Controllers\ApplyJobController;
@@ -37,7 +39,7 @@ Route::get('/', function () {
    Artisan::call('route:clear'); 
    Artisan::call('config:clear'); 
    Artisan::call('view:clear'); 
-    return view('home');
+     return view('frontend.services.index');
 });
 
 Route::get('/home', function () {
@@ -52,6 +54,7 @@ Route::get('/clear', function () {
 });
 
 
+Route::resource('abouts', AboutController::class);
 
 
 Route::get('send', [ContactMail::class,'envelope']);
@@ -70,5 +73,6 @@ Route::resource('contacts', ContactController::class);
 Route::resource('clientcontacts', ClientContactController::class);
 Route::resource('clientblogs', ClientBlogController::class);
 Route::resource('privateservices', PrivatServiceController::class);
+Route::resource('logos', LogoController::class);
 
 

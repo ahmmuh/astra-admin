@@ -11,11 +11,26 @@ class PrivatServiceController extends Controller
     /**
      * Display a listing of the resource.
      */
+     public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+
+    }
+    
     public function index()
     {
-        
         $services = PrivateService::all();
-        return view('backend.privateservice.index',compact('services'));
+        if (Auth::check()) {
+       
+                return view('backend.privateservice.index',compact('services'));
+
+
+     } else {
+        # code...
+        return view('frontend.privateservice.index',compact('services'));
+
+     }
+     
     }
 
   
@@ -57,7 +72,7 @@ class PrivatServiceController extends Controller
         $service->description = $request->description;
         $service->serviceType = $request->serviceType;
         $service->serviceImage = $img_name;
-        Storage::disk('public')->put('images/serviceImages'.$img_name, file_get_contents($img));
+        Storage::disk('public')->put('images/'.$img_name, file_get_contents($img));
          $service->save();
         return redirect()->route('privateservices.index')->with('success','En tjänst har lagts till på hemsidan');
     }
@@ -68,14 +83,8 @@ class PrivatServiceController extends Controller
     public function show($id)
     {
      $service = PrivateService::findOrFail($id);
-     if (Auth::check()) {
-       return view('backend.privateservice.show',compact('service'));
-
-     } else {
-        # code...
         return view('frontend.privateservice.show',compact('service'));
 
-     }
      
     }
 

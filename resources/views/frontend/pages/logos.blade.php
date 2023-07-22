@@ -24,79 +24,19 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="row">
-                <div class="col-md-3 col-sm-6 mb-3">
+                @foreach ($logos as $logo)
+                    <div class="col-md-3 col-sm-6 mb-3">
                     <a href="#">
                         <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px">
-                            <img src="{{ url('../images/customer-logos/logo10.png') }}"  alt="">
+                            <img src="{{ asset('storage/images/'.$logo->logo) }}"   alt="">
                         </span>
                     </a>
                   
                 </div>
-
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <a href="#">
-                        <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px">
-                            <img src="{{url('../images/customer-logos/logo19.png') }}" alt="">
-                        </span>
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <a href="#">
-                        <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px; ">
-                            <img src="{{url('../images/customer-logos/logo21.png')}}" style="padding: 2rem;" alt="">
-
-                        </span>
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <a href="#">
-                        <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px">
-                            <img src="{{url('../images/customer-logos/logo5.png')}}" alt="">
-                        </span>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
-        <div class="carousel-item">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <a href="#">
-                        <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px">
-                            <img src="{{url('../images/customer-logos/logo2.png')}}" alt="">
-
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <a href="#">
-                        <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px">
-                            <img src="{{url('../images/customer-logos/logo12.png')}}" alt="">
-
-                        </span>
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <a href="#">
-                        <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px">
-                            <img src="{{url('../images/customer-logos/logo4.png')}}" alt="">
-
-                        </span>
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <a href="#">
-                        <span class="img-text card p-4 d-flex justify-content-center" style="height: 200px">
-                            <img src="{{url('../images/customer-logos/logo9.png')}}" alt="">
-
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
+       
         
       
     </div>

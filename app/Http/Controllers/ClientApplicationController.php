@@ -7,13 +7,11 @@ use App\Models\Job;
 use Illuminate\Http\Request;
 class ClientApplicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-//     public function __construct()
-// {
-//     $this->middleware('auth');
-// }
+ public function __construct()
+    {
+        $this->middleware('auth')->except(['store']);
+
+    }
     public function index()
     {
         $applications = Application::orderBy('id', 'DESC')->get();

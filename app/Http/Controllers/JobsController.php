@@ -10,10 +10,12 @@ class JobsController extends Controller
     /**
   */
 
-//   public function __construct()
-// {
-//     $this->middleware('auth');
-// }
+ public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+
+    }
+
     public function index()
     {
     $jobs =  Job::latest()->simplePaginate(5);

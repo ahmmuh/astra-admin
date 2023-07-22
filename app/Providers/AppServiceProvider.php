@@ -25,10 +25,14 @@ class AppServiceProvider extends ServiceProvider
         $private_services = DB::table('private_services')->get();
         $blogs = DB::table('blogs')->get();
         $contacts = DB::table('contacts')->get();
+        $abouts = DB::table('abouts')->get();
+        $logos = DB::table('logos')->get();
 
         view()->share('blogs', $blogs);
+        view()->share('logos', $logos);
         view()->share('services', $services);
         view()->share('contacts', $contacts);
+        view()->share('abouts', $abouts);
         view()->share('private_services', $private_services);
 
     }

@@ -28,7 +28,7 @@
 
     <div class="row mt-3">
             @foreach ($services as $service)
-         <div class="col-lg-4 col-md-6 col-sm-12">
+         <div class="col-12">
                 <div class="card mb-3">
             <img class="card-img-top" src="{{ asset('/storage/',$service->serviceImage)}}" alt="Title">
             <div class="card-body">

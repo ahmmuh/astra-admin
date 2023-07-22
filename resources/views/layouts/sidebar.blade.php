@@ -7,5 +7,7 @@
 <a href="{{ route('privateservices.index') }}" class="list-group-item list-group-item-action"> <i class="fa-solid fa-person-digging fa-lg"></i>Privat tjänster</a>
 <a href="{{ route('applications.index') }}" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-lines fa-lg"></i>  Jobb ansökningar</a>
 <a href="{{ route('contacts.index') }}" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-lines fa-lg"></i>  Våra kontaktuppgifter</a>
+<a href="{{ route('abouts.index') }}" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-lines fa-lg"></i>Om Astrastäd</a>
+<a href="{{ route('logos.index') }}" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-lines fa-lg"></i>Logos</a>
 </div>
 @endif

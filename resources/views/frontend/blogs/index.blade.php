@@ -4,19 +4,25 @@
 @section('content')
 <div class="container">
     <div class="row">
-      @foreach ($blogs as $blog)
-          <div class="col-lg-4">
-            <div class="card">
-                {{-- <img class="card-img-top" src="{{$blog->blogImage}}"> --}}
-                <div class="card-body">
-                    <h4 class="card-title">{{$blog->title}}</h4>
-                    <p class="card-text">{{$blog->bodyText}}</p>
-                    <p>{{$blog->created_at}}</p>
-                </div>
+   @foreach ($blogs as $blog)
+        <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img src="Image Source" class="img-fluid rounded-start" alt="Card title">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title">{{$blog->title}}</h5>
+              <p class="card-text">{{$blog->bodyText}}</p>
+              <p>{{$blog->description}}</p>
+              <p class="card-text"><small class="text-muted">{{$blog->created_at}}</small></p>
             </div>
           </div>
-      @endforeach
-    </div>
+        </div>
+      </div>
+   @endforeach
+
+</div>
 </div>
    
 @endsection

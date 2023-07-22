@@ -9,13 +9,11 @@ use DB;
 
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-//     public function __construct()
-// {
-//     $this->middleware('auth');
-// }
+  public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+
+    }
     public function index()
     {
         
@@ -62,7 +60,7 @@ class ServiceController extends Controller
         $service->description = $request->description;
         $service->serviceType = $request->serviceType;
         $service->serviceImage = $img_name;
-        Storage::disk('public')->put('images/serviceImages'.$img_name, file_get_contents($img));
+        Storage::disk('public')->put('images/' .$img_name, file_get_contents($img));
          $service->save();
         return redirect()->route('services.index')->with('success','En tjänst har lagts till på hemsidan');
     }
