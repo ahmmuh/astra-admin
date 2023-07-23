@@ -3,7 +3,9 @@
 @section('content')
 <div class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" id="kontor-bg">
+      <div class="carousel-item active" id="backgroundImage">
+        <img class="bgImage" src="{{ asset('storage/images/'.$service->serviceImage) }}" style="height: 100%" width="100%" alt="Bild">
+
         <div class="carousel-caption d-md-block" style="width: 50%; margin: 0 auto;">
             <h1 class="text-white">Vi håller ert kontor rent och fint året runt!
             </h1>
@@ -20,7 +22,7 @@
 <div class="container">
    <div class="row text-start">
                 <div class="col-lg-6 col-md-12">
-                    <img src="{{ asset('storage/images/'.$service->serviceImage) }}"  style="width: 80%" alt="Bild">
+                    <img  src="{{ asset('storage/images/'.$service->serviceImage) }}"  style="width: 80%" alt="Bild">
                 </div>
 
                 <div class="col-lg-6 col-md-12">
@@ -28,10 +30,13 @@
                     <p>
                         {{$service->bodyText}}
                  </p>
-                    <a  href="{{ url('clientcontacts') }}" class="btn blue-background">Kontakta oss</a>
+                    <a  href="{{ url('clientcontacts') }}" class="btn btn-primary">Kontakta oss</a>
+                    <button class="btn btn-primary">Kontakta oss</button>
                 </div>
                 <p class="mt-4">{{$service->description}}</p>
             </div>
 </div>
+<script></script>
     
 @endsection
+

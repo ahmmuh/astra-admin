@@ -72,7 +72,7 @@ class PrivatServiceController extends Controller
         $service->description = $request->description;
         $service->serviceType = $request->serviceType;
         $service->serviceImage = $img_name;
-        Storage::disk('public')->put('images/'.$img_name, file_get_contents($img));
+        Storage::disk('public')->put('images/' .$img_name, file_get_contents($img));
          $service->save();
         return redirect()->route('privateservices.index')->with('success','En tjänst har lagts till på hemsidan');
     }
