@@ -2,13 +2,13 @@
 
 
 @section('content')
-<div class="container">
-    <div class="row">
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row w-75 ">
    @foreach ($blogs as $blog)
-        <div class="card mb-3">
+        <div class="card mb-2">
         <div class="row g-0">
           <div class="col-md-3">
-            <img src="Image Source" class="img-fluid rounded-start" alt="Card title">
+            <img src="{{ asset('storage/images/'.$blog->blogImage) }}" class="img-fluid rounded-start" alt="Card title">
           </div>
           <div class="col-md-9">
             <div class="card-body">

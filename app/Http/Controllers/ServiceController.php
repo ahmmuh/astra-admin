@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +17,18 @@ class ServiceController extends Controller
     public function index()
     {
         
-        $services = Service::all();
-        return view('backend.services.index',compact('services'));
+        $services = Service::latest()->paginate(6);
+
+             if (Auth::check()) {
+       
+                return view('backend.services.index',compact('services'));
+
+
+     } else {
+        # code...
+        return view('frontend.services.index',compact('services'));
+
+     }
     }
 
   

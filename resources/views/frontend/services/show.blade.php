@@ -1,42 +1,29 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-<div class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" id="backgroundImage">
-        <img class="bgImage" src="{{ asset('storage/images/'.$service->serviceImage) }}" style="height: 100%" width="100%" alt="Bild">
-
-        <div class="carousel-caption d-md-block" style="width: 50%; margin: 0 auto;">
-            <h1 class="text-white">Vi håller ert kontor rent och fint året runt!
-            </h1>
-            <p>
-            Med oss får ni städning till rimliga priser. Alltid samma höga kvalitet tack vare våra professionella städare. Oavsett hur stort det är. 
-            Kontakta oss för en kostnadsfri offert och svar på dina frågor.
-
-            </p>
-            <a href="/pages.contact" class="btn btn-lg blue-background rounded-pill" style="width: 20rem">Kontakta oss</a>
-          </div>
-      </div>
-    </div>
-  </div>
 <div class="container">
-   <div class="row text-start">
+   <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <img  src="{{ asset('storage/images/'.$service->serviceImage) }}"  style="width: 80%" alt="Bild">
+                    <img  src="{{ asset('/storage/images/' .$service->serviceImage) }}" height="auto"  style="width: 100%" alt="Bild">
                 </div>
 
-                <div class="col-lg-6 col-md-12">
+                <div class="col-lg-6 col-md-12 ">
                     <h3>{{$service->title}}</h3>
                     <p>
                         {{$service->bodyText}}
                  </p>
-                    <a  href="{{ url('clientcontacts') }}" class="btn btn-primary">Kontakta oss</a>
-                    <button class="btn btn-primary">Kontakta oss</button>
+                <p>{{$service->description}}</p>
+
+                    <a  href="{{ url('clientcontacts') }}" class="btn btn-warning">Kontakta oss </a>
                 </div>
-                <p class="mt-4">{{$service->description}}</p>
+                <p class="p-3">{{$service->description}}</p>
             </div>
+
+          <div class="row">
+            @include('frontend.services.sections.index')
+          </div>
 </div>
-<script></script>
+
     
 @endsection
 

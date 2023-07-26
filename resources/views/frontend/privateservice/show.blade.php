@@ -13,6 +13,8 @@
                         {{$service->bodyText}}
                  </p>
                 </div>
+
+                @include('frontend.privateservice.sections.index')
             </div>
 </div>
     

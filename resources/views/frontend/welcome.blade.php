@@ -37,7 +37,7 @@
                     <a href="{{url('/frontend/pages.contact')}}" class="btn btn-lg blue-background rounded-pill text-white mb-3" style=" background-color: #0090db;">Kontakta oss</a>
                   </div>
         </div>
-          @include('/frontend/pages.service')      
+          {{-- @include('/frontend/pages.service')       --}}
       </div>
       
       @endsection

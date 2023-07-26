@@ -1,11 +1,16 @@
 // const bgColor = document.getElementById('bgcolor');
-const image = document.querySelector('.bgImage').src;
-const backgroundImage = document.getElementById("backgroundImage");
+// const image = document.querySelector('.bgImage').src;
+// const backgroundImage = document.getElementById("backgroundImage");
 
-if(image){
-    image.style.width = 100%;
-   backgroundImage.style.backgroundImage = "url('" + image + "')";
-}
+// if(image){
+//     image.style.width = 100%;
+//    backgroundImage.style.backgroundImage = "url('" + image + "')";
+// }
 
 
 
+// $(document).ready(function(){
+//   $(".owl-carousel").owlCarousel();
+// });
+
+// console.log("Carousel");
