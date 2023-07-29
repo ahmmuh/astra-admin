@@ -18,6 +18,17 @@
                 </div>
                 <p class="p-3">{{$service->description}}</p>
             </div>
+             <div class="row">
+  <h3>Dessa ingår i tjänsten</h3>
+  <ul class="list-group list-group-numbered">
+                <li class="list-group-item active">Active item</li>
+                <li class="list-group-item">
+                   {{-- {{$service['extra']}} --}}
+                </li>
+
+               </ul>
+
+ </div>
 
           <div class="row">
             @include('frontend.services.sections.index')

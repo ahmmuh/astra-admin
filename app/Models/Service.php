@@ -7,11 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+      protected $casts = [
+        'extra' => 'json'
+    ];
     protected $fillable = [
            'title',
             'description',
+            'descriptionImage',
             'serviceType',
+            'extra',
             'serviceImage',
     ];
+    
+    protected $table = 'services';
+
     use HasFactory;
 }

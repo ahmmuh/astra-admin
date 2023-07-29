@@ -65,7 +65,7 @@ class BlogController extends Controller
         $blog->blogImage = $img_name;
         Storage::disk('public')->put('images/'.$img_name, file_get_contents($img));
         $blog->save();
-         return redirect()->route('backend.blogs.index')->with('success','Nyhet har nu publicerats');
+         return redirect()->route('blogs.index')->with('success','Nyhet har nu publicerats');
     }
 
     /**
@@ -123,7 +123,7 @@ class BlogController extends Controller
         'description' => $blog->description,
         'blogImage' => $blog->blogImage,
     ]);
-    return redirect()->route('backend.blogs.index')->with('success','Nyheten har uppdaterats');
+    return redirect()->route('blogs.index')->with('success','Nyheten har uppdaterats');
 
      }
 
@@ -133,7 +133,7 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $blog->delete();
-        return redirect()->route('backend.blogs.index')->with('danger','En nyhet har nu raderats');
+        return redirect()->route('blogs.index')->with('danger','En nyhet har nu raderats');
 
     }
 }

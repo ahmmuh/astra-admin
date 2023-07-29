@@ -63,7 +63,7 @@ class JobsController extends Controller
         
        
           Job::create($request->all());
-         return redirect()->route('backend.jobs.index')->with('success','Tjänsten utannonserats');
+         return redirect()->route('jobs.index')->with('success','Tjänsten utannonserats');
         
     }
 
@@ -121,7 +121,7 @@ class JobsController extends Controller
     {
         $job = Job::findOrFail($id);
         $job->delete();
-        return redirect()->route('backend.jobs.index')->with('danger','En tjänst har nu raderats');
+        return redirect()->route('jobs.index')->with('danger','En tjänst har nu raderats');
 
     }
 }

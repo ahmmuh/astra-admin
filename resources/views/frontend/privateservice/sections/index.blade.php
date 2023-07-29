@@ -65,7 +65,7 @@
 <div class="container mt-2 service-section">
   <div class="row">
     <h2>Se våra privattjänster</h2>
-    @foreach ($services as $service)
+    @foreach ($private_services as $service)
         <div class="col-md-4 col-sm-6 item mb-2">
       <div class="card item-card card-block  h-100">
     <div class="card-body">

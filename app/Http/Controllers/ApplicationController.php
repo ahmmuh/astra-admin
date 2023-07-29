@@ -54,8 +54,7 @@ public function __construct()
             'email' => 'required',
             'telefon' => 'required|numeric',
             'description' => 'required',
-            'jobType' => 'required',
-            'location' => 'required',
+     
         ],
         [
         'firstName.required' => 'Detta fält är obligatoriskt (Förnamn)',
@@ -63,12 +62,10 @@ public function __construct()
         'email.required' => 'Detta fält är obligatoriskt (E-post)',
         'telefon.required' => 'Detta fält är obligatoriskt, siffror (Telefon)',
         'description.required' => 'Detta fält är obligatoriskt (kort beskrivning om dig)',
-        'jobType.required' => 'Detta fält är obligatoriskt (Vad är det för jobb du söker?)',
-        'location.required' => 'Detta fält är obligatoriskt (Ort)',
     ]
     );
         Application::create($request->all());
-        return redirect()->route('backend.applications.index')->with('success','Din ansökan har nu skickats, Vi återkommer till dig inom kort');
+        return redirect()->route('applications.index')->with('success','Din ansökan har nu skickats, Vi återkommer till dig inom kort');
         
     }
 
@@ -113,8 +110,6 @@ public function __construct()
             'email' => 'required',
             'telefon' => 'required|numeric',
             'description' => 'required',
-            'jobType' => 'required',
-            'location' => 'required',
 
         ],
         [
@@ -123,12 +118,10 @@ public function __construct()
         'email.required' => 'Detta fält är obligatoriskt (E-post)',
         'telefon.required' => 'Detta fält är obligatoriskt, siffror (Telefon)',
         'description.required' => 'Detta fält är obligatoriskt (kort beskrivning om dig)',
-        'jobType.required' => 'Detta fält är obligatoriskt (Vad är det för jobb du söker?)',
-        'location.required' => 'Detta fält är obligatoriskt (Ort)',
     ]);
 
             $application->update($request->all());
-             return redirect()->route('backend.application.index')->with('success','En ansökan uppdaterades');
+             return redirect()->route('application.index')->with('success','En ansökan uppdaterades');
      }
 
      
@@ -137,7 +130,7 @@ public function __construct()
     {
         $application = Application::findOrFail($id);
         $application->delete();
-        return redirect()->route('backend.applications.index')->with('danger','En jobbansökan togs bort');
+        return redirect()->route('applications.index')->with('danger','En jobbansökan togs bort');
 
     }
  

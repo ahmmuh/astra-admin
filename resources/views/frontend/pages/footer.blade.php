@@ -32,13 +32,13 @@
         <div class="col-lg-3 col-md-6 mb-3">
             <div class="list-group">
                 <h5>  Mer info om våra tjänster</h5>
-                @foreach ($services as $service)
+                {{-- @foreach ($services as $service)
                  @if (count($services) >= 5) 
                        <a href="#"" class="list-group-item list-group-item-action">
                     {{$service->title}}</a>
                    @endif
 
-                @endforeach
+                @endforeach --}}
             </div>
         </div>
 

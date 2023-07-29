@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('private_services', function (Blueprint $table) {
        $table->bigIncrements('id');
             $table->string('title')->nullable();
-            $table->string('bodyText')->nullable();
+            $table->text('bodyText')->nullable();
             $table->text('description')->nullable();
+            $table->text('descriptionImage')->nullable();
             $table->string('serviceType');
+             $table->json('extra');
             $table->string('serviceImage');
             $table->timestamps();
     });

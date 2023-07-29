@@ -33,9 +33,9 @@
   color: rgba(218, 57, 111, 0.904);
 }
 .header-container p{
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: Arial, Helvetica, sans-serif;
-  /* letter-spacing: .2rem; */
+  letter-spacing: .1rem;
   padding-top: .2rem;
 }
 .header-container .btn{
@@ -71,8 +71,8 @@ div.btns a:nth-child(1){
    <div class="row">
       <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
        @foreach ($services as $service)
-        @if ($service->title === 'Kontorstäd')
-          <h3 class="title">{{$service->serviceType}} <strong> Lorem ipsum dolor sit amet.</strong></h3>
+        @if ($service->serviceType === 'home')
+          <h3 class="title">{{$service->title}} <strong> Lorem ipsum dolor sit amet.</strong></h3>
         <p>{{$service->description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, iusto!</p>
         @endif
            
@@ -103,6 +103,6 @@ div.btns a:nth-child(1){
     <a href="http://" class="btn btn-warning btn-lg">Kontakta oss</a>
   </div>
  </div>
- 
+
   </div>
 @endsection

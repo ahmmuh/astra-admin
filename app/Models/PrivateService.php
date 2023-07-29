@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class PrivateService extends Model
 {
+      protected $casts = [
+        'extra' => 'json'
+    ];
      protected $fillable = [
            'title',
             'description',
+            'descriptionImage',
             'serviceType',
+            'extra',
             'serviceImage',
     ];
     protected $table='private_services';

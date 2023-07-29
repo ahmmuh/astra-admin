@@ -28,37 +28,29 @@
   <div class="col">         
           <a href="{{ route('applications.create') }}" class="btn btn-warning mb-2">Sök jobb</a>
 
-         <ul class="list-group list-group-numbered">
            <table class="table table-condensed table-hover">
              <thead >
-               <tr class="bg-primary text-white">
-                 <th class="text-white" scope="col">Sökande</th>
-                 <th class="text-white" scope="col">E-post</th>
-                 <th class="text-white" scope="col">Telefon</th>
-                 <th class="text-white" scope="col">CV</th>
-                 <th class="text-white" scope="col">beskrivning</th>
-                 <th class="text-white" scope="col">JobbTyp</th>
-                 <th class="text-white" scope="col">Ort</th>
-                 <th class="text-white" scope="col">Ansökningsdatum</th>
-                </tr>
-              </thead>
+            <tr class="table-primary">
+              <th scope="col">Namn</th>
+              <th scope="col">E-post</th>
+              <th scope="col">Telefon</th>
+              <th scope="col">Behandla ansökan</th>
+              <th scope="col">Sökt</th>
+            </tr>
+          </thead>
               <tbody>
                 @foreach ($applications as $application)
                 <tr>
                   <td>{{ $application->firstName }} {{ $application->lastName }}</td>
                   <td>{{ $application->email }}</td>
                   <td>{{ $application->telefon }}</td>
-                  <td>{{ $application->cv }} </td>
                   <td><a href="{{ route('applications.show',$application) }}">Gå igenom ansökan</a></td>
-                  <td>{{ $application->jobType }}</td>
-                  <td>{{ $application->location }}</td>
                   <td>{{ $application->created_at }}</td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
             <a href="{{ route('services.index') }}"><i class="fa-solid fa-chevron-left fa-xl"></i></a>
-         </ul>
    </div>
       
   @endif

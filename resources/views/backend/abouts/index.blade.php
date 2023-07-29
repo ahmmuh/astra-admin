@@ -8,7 +8,7 @@
     <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-3">
-            <img src="Image Source" class="img-fluid rounded-start" alt="Card title">
+           <img class="card-img-top"  src="{{ asset('storage/images/'.$about->logo) }}" style="width: 240px" alt="Title">
           </div>
           <div class="col-md-9">
             <div class="card-body">

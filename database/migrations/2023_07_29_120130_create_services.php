@@ -9,14 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   public function up(): void
+    public function up(): void
     {
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
-            $table->string('bodyText')->nullable();
+            $table->text('bodyText')->nullable();
             $table->text('description')->nullable();
+           $table->string('descriptionImage')->nullable();
             $table->string('serviceType');
+            $table->json('extra');
             $table->string('serviceImage');
             $table->timestamps();
         });

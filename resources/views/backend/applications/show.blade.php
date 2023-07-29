@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title"></h5>
-            <h5 class="card-title">{{ $application->firstName }} {{ $application->lastName }} sökte {{ $application->jobType }} i  {{ $application->location }} </h5>
+            <h5 class="card-title">{{ $application->firstName }} {{ $application->lastName }} söker jobb </h5>
             <div class="col d-flex gap-3">
                 <p class="card-text">{{ $application->description }}</p>
             </div>

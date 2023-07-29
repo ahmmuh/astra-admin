@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $ledigJobb = DB::table('jobs')->get();
         $services = DB::table('services')->get();
+        // $extra = DB::table('services->extra')->get();
         $private_services = DB::table('private_services')->get();
         $blogs = DB::table('blogs')->get();
         $contacts = DB::table('contacts')->get();
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         $logos = DB::table('logos')->get();
 
         view()->share('blogs', $blogs);
+        // view()->share('extra', $extra);
         view()->share('logos', $logos);
         view()->share('services', $services);
         view()->share('contacts', $contacts);

@@ -19,10 +19,19 @@
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                     </div>
+                    
                    <div class="mb-3 ">
                         <label for="description" class="col-4 col-form-label">Service beskrivning</label>
                             <textarea name="description" class="form-control" id="description" cols="60" rows="10" placeholder="Service beskrivning"></textarea>
                                   @error('description')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                    </div>
+
+                     <div class="mb-3 ">
+                        <label for="descriptionImage" class="col-4 col-form-label">Bild</label>
+                            <input type="file" class="form-control" name="descriptionImage" id="descriptionImage">
+                                  @error('descriptionImage')
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                     </div>
@@ -34,6 +43,17 @@
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                     </div>
+
+                     <div class="mb-3 ">
+                        <label for="extra" class="col-4 col-form-label">Dessa ingår i tjänsten</label>
+                            <input type="text" class="form-control" name="extra[]" id="extra" >
+                                  @error('extra')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                    </div>
+
+                    {{-- <input type="text" name="day[]" class="form-control" value="{{ $days[$i] }}" readonly/> --}}
+
                      <div class="mb-3 ">
                         <label for="serviceImage" class="col-4 col-form-label">Bild</label>
                             <input type="file" class="form-control" name="serviceImage" id="serviceImage">

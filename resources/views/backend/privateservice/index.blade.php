@@ -30,7 +30,8 @@
             @foreach ($services as $service)
          <div class="col-12">
                 <div class="card mb-3">
-            <img class="card-img-top" src="{{ asset('/storage/',$service->serviceImage)}}" alt="Title">
+            <img class="card-img-top"  src="{{ asset('storage/images/'.$service->serviceImage) }}" style="width: 240px" alt="Title">
+
             <div class="card-body">
                 <h4 class="card-title">{{$service->title}}</h4>
                 <p class="card-text">{{ $service->description }}</p>

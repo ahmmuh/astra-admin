@@ -26,11 +26,25 @@
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                     </div>
+                     <div class="mb-3 ">
+                        <label for="descriptionImage" class="col-4 col-form-label">Bild</label>
+                            <input type="file" class="form-control" name="descriptionImage" id="descriptionImage">
+                                  @error('descriptionImage')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                    </div>
 
                      <div class="mb-3 ">
                         <label for="serviceType" class="col-4 col-form-label">Servicetyp</label>
                             <input type="text" class="form-control" name="serviceType" id="serviceType" placeholder="Vilken tjänst?">
                                   @error('serviceType')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                    </div>
+                       <div class="mb-3 ">
+                        <label for="serviceType" class="col-4 col-form-label">Dessa ingår i tjänsten</label>
+                            <input type="text" class="form-control" name="extra[]" id="serviceType" >
+                                  @error('extra')
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                     </div>

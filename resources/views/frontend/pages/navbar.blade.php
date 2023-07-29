@@ -34,10 +34,10 @@
               Privat
             </a>
             <ul class="dropdown-menu">
-              @foreach ($private_services as $service)
+              {{-- @foreach ($private_services as $service)
               
               <li><a class="dropdown-item" href="{{ route('privateservices.show',$service->id) }}">{{$service->title}}</a></li>
-              @endforeach
+              @endforeach --}}
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -47,7 +47,7 @@
             <ul class="dropdown-menu">
               
               @foreach ($services as $service)
-              <li><a class="dropdown-item" href="{{ route('services.show', $service->id) }}" >{{$service->title}}</a></li>
+              <li><a class="dropdown-item" href="{{ route('services.show', $service->id) }}" >{{$service->serviceType}}</a></li>
               @endforeach
               {{-- <li><a class="dropdown-item" href="{{ url('frontend.pages.skol') }}">Skolstädning</a></li>
               <li><a class="dropdown-item" href="{{ url('frontend.pages.trapp') }}">Trappstädning</a></li>
