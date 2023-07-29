@@ -2,6 +2,22 @@
   .navbar-toggler{
   color: white !important;
   }
+  .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  header{
+    padding-top: 3rem;
+  }
+  main{
+   margin-top: 2rem;
+   padding-top: 4rem;
+  }
+  
 </style>
 
 <nav class="navbar navbar-expand-lg">
@@ -60,11 +76,11 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('clientcontacts') }}">Kontakt</a>
+            <a class="nav-link" href="{{ url('contacts') }}">Kontakt</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{ url('clientblogs') }}">Nyhet</a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>

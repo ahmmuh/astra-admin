@@ -32,11 +32,13 @@
         <div class="col-lg-3 col-md-6 mb-3">
             <div class="list-group">
                 <h5>  Mer info om våra tjänster</h5>
+                @foreach ($services as $service)
+                 @if (count($services) >= 5) 
+                       <a href="#"" class="list-group-item list-group-item-action">
+                    {{$service->title}}</a>
+                   @endif
 
-                <a href="{{url('/frontend/pages.kontor')}}" class="list-group-item list-group-item-action">Kontorsstädning</a>
-                <a  href="{{ url('/frontend/pages.butik') }}" class="list-group-item list-group-item-action">Butikstädning</a>
-                <a href="{{ url('/frontend/pages.lager') }}" class="list-group-item list-group-item-action">Lagerstädning</a>
-                <a href="{{ url('/frontend/pages.bygg') }}" class="list-group-item list-group-item-action">Byggstädning</a>
+                @endforeach
             </div>
         </div>
 
@@ -46,6 +48,8 @@
                 <a href="https://se.linkedin.com/in/abdirahman-yussuf-231baa169" target="_blank" class="list-group-item list-group-item-action">Besök oss på Linkedin</a>
                 <a href="{{url('/frontend/pages.gdpr')}}" class="list-group-item list-group-item-action">Dataskyddspolicy</a>
                 <a href="{{url('/frontend/pages.company-policy')}}" class="list-group-item list-group-item-action">Verksamhetspolicy</a>
+            <a class="list-group-item list-group-item-action" href="{{ url('blogs') }}">Nyhet</a>
+
             </div>
         </div>
 

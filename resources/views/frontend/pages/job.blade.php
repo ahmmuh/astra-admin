@@ -28,7 +28,7 @@
                 <div class="accordion-body">
                  <p>{{$job->jobDescription}}</p>
                  <strong>{{$job->location}}</strong> <br>
-                 <span class="text-danger"><a href="{{route('apply.show', $job->id)}}">Sök tjänsten</a> innan {{$job->slutDatum}}</span> <br>
+                 <span class="text-danger"><a href="{{route('contacts.show', $job->id)}}">Sök tjänsten</a> innan {{$job->slutDatum}}</span> <br>
                  
                 </div>
               </div>

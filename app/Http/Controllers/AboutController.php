@@ -21,7 +21,7 @@ class AboutController extends Controller
         $abouts =  about::latest()->simplePaginate(3);
         
 
-          if (Auth::check()) {
+     if (Auth::check()) {
        
         return view('backend.abouts.index',compact('abouts'));
 

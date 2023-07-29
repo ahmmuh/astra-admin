@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Models\Job;
+use Auth;
 use Illuminate\Http\Request;
 class ApplicationController extends Controller
 {
@@ -21,7 +22,14 @@ public function __construct()
     public function index()
     {
         $applications = Application::orderBy('id', 'DESC')->get();
-      return view('backend.applications.index',compact('applications'));
+          if (Auth::check()) {
+          return view('backend.applications.index',compact('applications'));
+
+          }
+          else{
+         return view('frontend.applications.index',compact('applications'));
+
+          }
     }
 
     /**
@@ -72,7 +80,14 @@ public function __construct()
     public function show($id)
     {   
         $application = Application::findOrFail($id);
-        return view('backend.applications.show',compact('application'));
+        if(Auth::check()){
+
+            return view('backend.applications.show',compact('application'));
+        }
+        else{
+         return view('frontend.applications.show',compact('application'));
+
+        }
     }
  
 
@@ -83,7 +98,7 @@ public function __construct()
     public function edit($id)
     {
         $application = Application::findOrFail($id);
-        return view('backend.applications.edit',compact('applications'));
+        return view('backend.applications.edit',compact('application'));
     }
 
    

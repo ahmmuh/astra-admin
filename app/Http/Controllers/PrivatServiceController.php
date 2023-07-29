@@ -83,8 +83,13 @@ class PrivatServiceController extends Controller
     public function show($id)
     {
      $service = PrivateService::findOrFail($id);
-        return view('frontend.privateservice.show',compact('service'));
+     if(Auth::check()){
 
+         return view('backend.privateservice.show',compact('service'));
+     }
+     else{
+         return view('frontend.privateservice.show',compact('service'));
+     }
      
     }
 

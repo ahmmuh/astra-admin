@@ -54,10 +54,10 @@
 </head>
 <body>
       @include('frontend.pages.navbar')
+      <main>
                @yield('header')
 
 
-      <main>
             @yield('content')
               {{-- @include('frontend.pages.staff') --}}
 

@@ -68,10 +68,10 @@ Route::resource('blogs', BlogController::class);
 Route::resource('jobs', JobsController::class);
 Route::resource('services', ServiceController::class);
 Route::resource('applications', ApplicationController::class);
-Route::resource('apply', ApplyJobController::class);
+// Route::resource('apply', ApplyJobController::class);
 Route::resource('contacts', ContactController::class);
-Route::resource('clientcontacts', ClientContactController::class);
-Route::resource('clientblogs', ClientBlogController::class);
+// Route::resource('clientcontacts', ClientContactController::class);
+// Route::resource('clientblogs', ClientBlogController::class);
 Route::resource('privateservices', PrivatServiceController::class);
 Route::resource('logos', LogoController::class);
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Contact;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -19,7 +19,14 @@ class ContactController extends Controller
     {
     $contacts = Contact::latest()->get();
 
-        return view('backend.contacts.index', compact('contacts'));
+             if(Auth::check()){
+            return view('backend.contacts.index', compact('contacts'));
+
+        }
+        else{
+         return view('frontend.contacts.index',compact('contacts'));
+
+        }
     }
 
     /**

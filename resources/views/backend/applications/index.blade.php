@@ -57,7 +57,7 @@
                 @endforeach
               </tbody>
             </table>
-            <a href="{{ ('/') }}"><i class="fa-solid fa-chevron-left fa-xl"></i></a>
+            <a href="{{ route('services.index') }}"><i class="fa-solid fa-chevron-left fa-xl"></i></a>
          </ul>
    </div>
       

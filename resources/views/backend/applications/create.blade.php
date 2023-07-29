@@ -39,7 +39,8 @@
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                     </div>
-                    <div class="mb-3 col-lg-6 col-md-12">
+                    {{-- Ge användare möjlighet att välja ort och typ av tjänst --}}
+                    {{-- <div class="mb-3 col-lg-6 col-md-12">
                         <label for="" class="form-label">Vilken tjänst?</label>
                         <select class="form-select form-select-lg" name="jobType"  id="jobType" >
                             <option value="">Välj</option>
@@ -63,7 +64,7 @@
                               @error('location')
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                    </div>
+                    </div> --}}
                     
                 </div>
                 <button type="submit" class="btn btn-success btn-block w-100">Sök tjänsten</button>

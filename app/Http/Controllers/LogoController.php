@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Logo;
 use Illuminate\Support\Facades\Storage;
 use DB;
+use Auth;
 use Illuminate\Http\Request;
 
 class LogoController extends Controller
@@ -17,7 +18,12 @@ class LogoController extends Controller
     public function index()
     {
     $logos =  Logo::latest()->simplePaginate(5);
-       return view('backend.logos.index', compact('logos'));
+       if(Auth::check()){
+        return view('backend.logos.index', compact('logos'));
+       }
+       else{
+        return view('frontend.logos.index', compact('logos'));
+       }
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 class JobsController extends Controller
 {
     /**
@@ -19,7 +20,14 @@ class JobsController extends Controller
     public function index()
     {
     $jobs =  Job::latest()->simplePaginate(5);
-       return view('backend.jobs.index', compact('jobs'));
+    if(Auth::check()){
+        return view('backend.jobs.index', compact('jobs'));
+
+    }
+    else{
+      return view('backend.jobs.index',compact('jobs'));
+
+    }
     }
 
     /**

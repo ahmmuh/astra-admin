@@ -81,7 +81,13 @@ class ServiceController extends Controller
     public function show($id)
     {
      $service = Service::findOrFail($id);
-     return view('frontend.services.show',compact('service'));
+     if(Auth::check()){
+     return view('backend.services.show',compact('service'));
+
+     }
+     else{
+        return view('frontend.services.show',compact('service'));
+     }
     }
 
     /**

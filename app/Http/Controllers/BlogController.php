@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\File;
 use App\Models\Blog;
 use DB;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 class BlogController extends Controller
@@ -19,7 +20,14 @@ class BlogController extends Controller
     public function index()
     {
         $blogs =  Blog::latest()->simplePaginate(3);
-        return view('backend.blogs.index',compact('blogs'));
+        if(Auth::check()){
+            return view('backend.blogs.index',compact('blogs'));
+
+        }
+        else{
+      return view('frontend.blogs.index',compact('blogs'));
+
+        }
     }
     
     /**

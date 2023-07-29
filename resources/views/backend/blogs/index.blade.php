@@ -13,7 +13,7 @@
         {{ session()->get('danger') }}
     </div>
 @endif
-    <a name="" id="" class="btn btn-warning text-primary my-2" href="{{route ('blogs.create')}}" role="button">Skapa blog</a>
+    <a name="" id="" class="btn btn-warning my-2" href="{{route ('blogs.create')}}" role="button">Skapa blog</a>
 
     <div class="row">
        @if ($blogs->count() === 0)
