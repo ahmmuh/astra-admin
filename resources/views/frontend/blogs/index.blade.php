@@ -7,10 +7,10 @@
    @foreach ($blogs as $blog)
         <div class="card mb-2">
         <div class="row g-0">
-          <div class="col-md-3">
-            <img src="{{ asset('storage/images/'.$blog->blogImage) }}" class="img-fluid rounded-start" alt="Card title">
+          <div class="col-lg-4 col-md-12">
+            <img src="{{ asset('storage/images/'.$blog->blogImage) }}" class="img-fluid rounded-start" style="max-height: 100%" alt="Card title">
           </div>
-          <div class="col-md-9">
+          <div class="col-lg-8 col-md-12">
             <div class="card-body">
               <h5 class="card-title">{{$blog->title}}</h5>
               <p class="card-text">{{$blog->bodyText}}</p>

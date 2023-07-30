@@ -5,7 +5,8 @@
        @foreach ($abouts as $about)
         <div class="row">
             <div class="col-lg-5 col-md-12">
-                <img src="{{url('')}}" alt=""> 
+            <img src="{{ asset('/storage/images/' .$about->logo)}}" style="heigth: auto"  alt="Photo of sunset">
+
             </div>
             <div class="col-lg-7 col-md-12">
                 <h2>{{$about->title}}</h2>

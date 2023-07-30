@@ -11,7 +11,7 @@
             @foreach ($contacts as $contact)
         <div class="col-lg-3 col-md-6 mb-3">
             <h5>{{$contact->adress}}</h5>
-            <p>{{$contact->postNummer}} <br> {{$contact->ort}} <br> Öppettider: 6:00 - 17:00 <br> helgfria vardagar</p>
+            <p>{{$contact->postNummer}} <br> {{$contact->ort}} <br> {{$contact->telefon}} <br> Öppettider: 6:00 - 17:00 <br> helgfria vardagar</p>
         </div>
              @endforeach
 
@@ -46,8 +46,8 @@
             <div class="list-group" id="footer-list">
                 <h5>Sociala medier & Policy</h5>
                 <a href="https://se.linkedin.com/in/abdirahman-yussuf-231baa169" target="_blank" class="list-group-item list-group-item-action">Besök oss på Linkedin</a>
-                <a href="{{url('/frontend/pages.gdpr')}}" class="list-group-item list-group-item-action">Dataskyddspolicy</a>
-                <a href="{{url('/frontend/pages.company-policy')}}" class="list-group-item list-group-item-action">Verksamhetspolicy</a>
+                <a href="{{url('gdpr')}}" class="list-group-item list-group-item-action">Dataskyddspolicy</a>
+                <a href="{{url('./company-policy')}}" class="list-group-item list-group-item-action">Verksamhetspolicy</a>
             <a class="list-group-item list-group-item-action" href="{{ url('blogs') }}">Nyhet</a>
 
             </div>

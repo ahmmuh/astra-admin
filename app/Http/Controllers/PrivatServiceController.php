@@ -26,7 +26,6 @@ class PrivatServiceController extends Controller
 
 
      } else {
-        # code...
         return view('frontend.privateservice.index',compact('services'));
 
      }
@@ -48,23 +47,28 @@ class PrivatServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required:max:10',
+        
+       $request->validate([
+            'title' => 'required',
+            'title2' => 'required',
+            'menyNamn' => 'required:max:10',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
-            'extra' => 'required',
             'serviceType' => 'required',
+            'extra' => 'required',
             'serviceImage' => 'required|mimes:png,jpg,jpeg',
 
         ],
      [
         'title.required' => 'Titlen måste vara max 10 tecken',
+        'title2.required' => 'Titlen måste vara max 10 tecken',
+        'menyNamn.required' => 'Titlen måste vara max 10 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',
-        'extra.required' => 'Vad ingår i tjänsten?',
         'serviceType.required' => 'Namn på servicen ',
+        'extra.required' => 'Vad är som ingår i denna tjänst?',
         'serviceImage.required' => 'Bara png, jpeg jpg format',
     ]);
         
@@ -76,6 +80,8 @@ class PrivatServiceController extends Controller
         Storage::disk('public')->put('images/' .$img_name, file_get_contents($img));
         
         $service->title = $request->title;
+        $service->title2 = $request->title2;
+        $service->menyNamn = $request->bodyText;
         $service->bodyText = $request->bodyText;
         $service->description = $request->description;
         $service->extra = $request->extra;
@@ -123,8 +129,11 @@ class PrivatServiceController extends Controller
      */
     public function update(Request $request, PrivateService $service)
     {
-          $request->validate([
-            'title' => 'required:max:10',
+          
+       $request->validate([
+            'title' => 'required',
+            'title2' => 'required',
+            'menyNamn' => 'required:max:10',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
@@ -135,11 +144,13 @@ class PrivatServiceController extends Controller
         ],
      [
         'title.required' => 'Titlen måste vara max 10 tecken',
+        'title2.required' => 'Titlen måste vara max 10 tecken',
+        'menyNamn.required' => 'Titlen måste vara max 10 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',
         'serviceType.required' => 'Namn på servicen ',
-         'extra.required' => 'Vad ingår i tjänsten?',
+        'extra.required' => 'Vad är som ingår i denna tjänst?',
         'serviceImage.required' => 'Bara png, jpeg jpg format',
     ]);
 
@@ -151,6 +162,8 @@ class PrivatServiceController extends Controller
 
 
         $service->title = $request->title;
+        $service->title2 = $request->title2;
+        $service->menyNamn = $request->menyNamn;
         $service->bodyText = $request->bodyText;
         $service->serviceType = $request->serviceType;
         $service->description = $request->description;
@@ -168,6 +181,8 @@ class PrivatServiceController extends Controller
         ->where('id', $service->id)
         ->update([
         'title' => $service->title,
+        'title2' => $service->title2,
+        'menyNamn' => $service->menyNamn,
         'bodyText' => $service->bodyText,
         'description' => $service->description,
         'descriptionImage' => $service->descriptionImage,
@@ -176,7 +191,7 @@ class PrivatServiceController extends Controller
         'serviceImage' => $service->serviceImage,
     ]);
       
-        // $service->update($request->all());
+      $service->update($request->all());
      return redirect()->route('privateservices.index')->with('success' ,'Tjänsten har uppdaterats');
     }
 

@@ -17,14 +17,14 @@
  <div class="col">
       <div class="alert alert-success" role="alert">
           <h5 class="lead">Inga tjänster</h5>
-          <a href="{{ route('privateservices.create') }}" type="button" class="btn btn-warning">Lägg till ny tjänst</a>
+          <a href="{{ route('privateservices.create') }}" type="button" class="btn btn-warning">Lägg till ny privat tjänst</a>
       </div>
       
  </div>
       
   @else
    <div class="col">
-    <a href="{{ route('privateservices.create') }}" type="button" class="btn btn-warning">Lägg till ny tjänst</a>
+    <a href="{{ route('privateservices.create') }}" type="button" class="btn btn-warning">Lägg till privat ny tjänst</a>
 
     <div class="row mt-3">
             @foreach ($services as $service)
@@ -36,7 +36,7 @@
                 <h4 class="card-title">{{$service->title}}</h4>
                 <p class="card-text">{{ $service->description }}</p>
                 <p class="card-text">{{ $service->serviceType }}</p>
-                <a href="{{ route('privateservices.show', $service->id) }}">Läs mer</a>
+                <a href="{{ route('privateservices.show', $service->id) }}">Läs mer</a> 
 
             </div>
         </div>

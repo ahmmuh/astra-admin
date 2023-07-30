@@ -2,7 +2,7 @@
 @section('header')
 <style>
   .header-container{
-    height: 100vh;
+    height: auto;
  
   }
  @media only screen and (max-width: 600px) {
@@ -61,7 +61,10 @@ div.btns a:nth-child(1){
     outline-color: transparent;
     outline-style:solid;
     box-shadow: 0 0 0 4px #5a01a7;
-    transition: 0.7s;
+    transition: 0.5s;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 </style>
@@ -71,15 +74,15 @@ div.btns a:nth-child(1){
    <div class="row">
       <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
        @foreach ($services as $service)
-        @if ($service->serviceType === 'home')
+        @if ($service->startsida === 'startsida')
           <h3 class="title">{{$service->title}} <strong> Lorem ipsum dolor sit amet.</strong></h3>
         <p>{{$service->description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, iusto!</p>
         @endif
            
        @endforeach
         <div class="btns">
-          <a class="btn btn-lg btn-warning mr-1"> Företagsjänster</a>
-          <a class="btn btn-lg btn-warning"> Privattjänster</a>
+          <a href="#services" class="btn btn-lg btn-warning mr-1"> Företagsjänster</a>
+          <a href="{{ url('privateservices') }}" class="btn btn-lg btn-warning"> Privattjänster</a>
         </div>
         </div>
         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
@@ -88,21 +91,30 @@ div.btns a:nth-child(1){
         </div>
       </div>
  </header>
-
- 
   </div>
-    
-  <div class="container">
+
+  
+  <div class="container mt-4">
+    <hr>
     <div class="row">
-  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-    <img src="{{asset('images/images-shaqo/golv.jpeg')}}" style="max-height: 100%; z-index: -1; max-width: 100%;" alt="" >
+  @foreach ($services as $service)
+  @if ($service->startsida === 'startsida')
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <img src="{{ asset('storage/images/'.$service->descriptionImage) }}" style="max-height: 100%; z-index: -1; max-width: 100%;" alt="" >
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-    <h4 class="text-danger">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, incidunt!</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus reprehenderit maiores, debitis ad nam deleniti, esse consequuntur eaque quos dolorum facilis sit minima molestias quasi vitae tenetur numquam doloremque. Nulla, distinctio neque illum aliquid laborum nam sit saepe ipsum inventore fuga consequatur architecto commodi hic dignissimos tempore voluptates dolores.</p>
-    <a href="http://" class="btn btn-warning btn-lg">Kontakta oss</a>
+    <h4 class="text-danger">{{$service->title2}}</h4>
+    <p>{{$service->description}}</p>
+    <a href="{{ url('contacts') }}" class="btn btn-warning">Kontakta oss</a>
   </div>
+  @endif
+ @endforeach
  </div>
-
   </div>
+
+  <div class="container" id="services">
+  <div class="row">
+  @include('frontend.services.sections.index');
+ </div>
+</div>
 @endsection

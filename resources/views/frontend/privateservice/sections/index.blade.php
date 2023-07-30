@@ -35,9 +35,7 @@
   transform: scale(1.05);
   box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
 }
-.card-text{
-  /* height:80px;   */
-}
+
 
 .card::before, .card::after {
   position: absolute;

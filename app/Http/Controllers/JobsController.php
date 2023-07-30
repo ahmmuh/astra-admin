@@ -19,13 +19,14 @@ class JobsController extends Controller
 
     public function index()
     {
-    $jobs =  Job::latest()->simplePaginate(5);
-    if(Auth::check()){
+        $jobs = Job::latest()->paginate(6);
+        if(Auth::check()){
         return view('backend.jobs.index', compact('jobs'));
 
     }
     else{
-      return view('backend.jobs.index',compact('jobs'));
+        $jobs = Job::latest()->paginate(6);
+      return view('frontend.pages.job',compact('jobs'));
 
     }
     }
@@ -73,7 +74,14 @@ class JobsController extends Controller
     public function show($id)
     {   
         $job = Job::findOrFail($id);
-        return view('backend.jobs.show',compact('job'));
+        if(Auth::check()){
+            return view('backend.jobs.show',compact('job'));
+
+        }
+        else{
+        return view('frontend.jobs.show',compact('job'));
+
+        }
     }
  
 

@@ -1,19 +1,9 @@
 @extends('frontend.layouts.app')
+
 @section('content')
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-     <ul class="list-group">
-       <li class="list-group-item blue-background" aria-current="true">Kontaktuppgifter</li>
-       <li class="list-group-item">Tel: 010-333 05 57 <br></li>
-       <li class="list-group-item">Mobil: 0760 251170</li>
-       <li class="list-group-item">info@astrastad.se</li>
-       <li class="list-group-item">abdirahman@astrastad.se</li>
-       <li class="list-group-item">Fabriksgatan 7 <br>
-        412 50 Göteborg </li>
-     </ul>      
-    </div>
     <div class="col-md-8">
       <h3>Kontakta oss</h3>
       <p>

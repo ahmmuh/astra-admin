@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('private_services', function (Blueprint $table) {
             $table->string('title')->nullable();
+            $table->string('title2')->nullable();
+            $table->string('menyNamn')->nullable();
             $table->text('bodyText')->nullable();
             $table->text('description')->nullable();
-           $table->string('descriptionImage')->nullable();
+            $table->text('descriptionImage')->nullable();
             $table->string('serviceType');
-            $table->json('extra');
+             $table->json('extra');
             $table->string('serviceImage');
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('private_services');
     }
 };

@@ -4,44 +4,32 @@
   @if ($jobs->count() === 0)
  <div class="col">
       <div class="alert alert-warning" role="alert">
-          <h5 class="lead">Vi har lediga jobb just nu</h5>
+          <h5 class="lead">Vi har inga lediga jobb just nu</h5>
       </div>
       
  </div>
       
   @else
-  <div class="col">        
-          <h5 class=" text-success">Vi har {{$jobs->count()}} lediga jobb</h5>
-          <div class="accordion mb-2" id="accordionExample">
-           @foreach ($jobs as $index => $job)
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <a class="accordion-button" type="button" data-bs-toggle="collapse" 
-                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
-                href="#headingOne-{{ $index }}"
-                >
-                  {{$job->jobTitle}}
-                </a>
-              </h2>
-              <div id="headingOne-{{ $index }}" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-               data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                 <p>{{$job->jobDescription}}</p>
-                 <strong>{{$job->location}}</strong> <br>
-                 <span class="text-danger"><a href="{{route('contacts.show', $job->id)}}">Sök tjänsten</a> innan {{$job->slutDatum}}</span> <br>
-                 
-                </div>
-              </div>
-            </div>
-            
-            @endforeach
-          </div>
+  <div class="col-11 d-flex justify-content-center align-items-center m-auto">        
 
-       
-      
-          
-        
+@foreach ($jobs as $job)
+        <div class="card mb-2 p-3">
+        <div class="row g-0">
+          <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center bg-secondary text-white">
+            <h4>{{$job->jobTitle}}</h4>
+          </div>
+          <div class="col-lg-8 col-md-12">
+            <div class="card-body">
+               <h4>{{$job->jobTitle}}</h4>
+              <p class="card-text">{{$job->jobDescription}}</p>
+              <p class="card-text text-danger" >Sista ansökningsdag {{$job->slutDatum}}</p>
+              <a  href="{{ route('applications.create') }}" class="btn btn-warning ml-5">Sök tjänsten</a>
+            </div>
+          </div>
         </div>
+      </div>
+   @endforeach
+  </div>
       
   @endif
 </div>

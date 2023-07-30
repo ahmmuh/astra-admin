@@ -12,6 +12,8 @@ class PrivateService extends Model
     ];
      protected $fillable = [
            'title',
+           'title2',
+            'menyNamn',
             'description',
             'descriptionImage',
             'serviceType',

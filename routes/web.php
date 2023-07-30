@@ -11,13 +11,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LogoController;
 
-use App\Http\Controllers\ClientJobController;
-use App\Http\Controllers\ApplyJobController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ClientContactController;
-use App\Http\Controllers\ClientBlogController;
 use App\Http\Controllers\PrivatServiceController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\SendingMailController;
 use \App\Mail\ContactMail;
 
 /*
@@ -31,7 +28,7 @@ use \App\Mail\ContactMail;
 |
 */
 
-Route::get('/frontend/jobs', [ClientJobController::class,'index'])->name('jobs');
+// Route::get('/frontend/jobs', [ClientJobController::class,'index'])->name('jobs');
 
 // Route::get('/frontend/jobs', [ClientJobController::class,'index']);
 Route::get('/', function () {
@@ -74,5 +71,6 @@ Route::resource('contacts', ContactController::class);
 // Route::resource('clientblogs', ClientBlogController::class);
 Route::resource('privateservices', PrivatServiceController::class);
 Route::resource('logos', LogoController::class);
+Route::resource('sending', SendingMailController::class);
 
 

@@ -48,7 +48,10 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
        $request->validate([
-            'title' => 'required:max:10',
+            'title' => 'required',
+            'title2' => 'required',
+            'startsida' => 'required',
+            'menyNamn' => 'required:max:10',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
@@ -59,6 +62,9 @@ class ServiceController extends Controller
         ],
      [
         'title.required' => 'Titlen måste vara max 10 tecken',
+        'title2.required' => 'Titlen måste vara max 10 tecken',
+        'startsida.required' => 'Titlen måste vara max 10 tecken',
+        'menyNamn.required' => 'Titlen måste vara max 10 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',
@@ -81,6 +87,9 @@ class ServiceController extends Controller
        Storage::disk('public')->put('images/'.$imageName, file_get_contents($img2));
         $service->extra = $request->extra;
         $service->title = $request->title;
+        $service->title2 = $request->title2;
+        $service->startsida = $request->startsida;
+        $service->menyNamn = $request->menyNamn;
         $service->bodyText = $request->bodyText;
         $service->description = $request->description;
         $service->serviceType = $request->serviceType;
@@ -117,21 +126,29 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-           $request->validate([
-            'title' => 'required:max:10',
-            'bodyText' => 'required|min:280|max:300',
-            'description' => 'required|max:400|min:550',
+        $request->validate([
+            'title' => 'required',
+            'title2' => 'required',
+            'menyNamn' => 'required:max:10',
+            'startsida' => 'required',
+            'bodyText' => 'required|min:250|max:400',
+            'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
-            'serviceType' => 'required|max:10',
+            'serviceType' => 'required',
+            'extra' => 'required',
             'serviceImage' => 'required|mimes:png,jpg,jpeg',
 
         ],
      [
         'title.required' => 'Titlen måste vara max 10 tecken',
-        'bodyText.required' => 'Tjänsten måste ha beskrivning, 300 tecken',
-        'description.required' => 'En beskrivning med 300 tecken max och 250 tecken min',
+        'title2.required' => 'Titlen måste vara max 10 tecken',
+        'startsida.required' => 'Titlen måste vara max 10 tecken',
+        'menyNamn.required' => 'Titlen måste vara max 10 tecken',
+        'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
+        'description.required' => 'En beskrivning med 400 tecken (min)',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',
-        'serviceType.required' => 'Namn på servicen med 10 tecken max',
+        'serviceType.required' => 'Namn på servicen ',
+        'extra.required' => 'Vad är som ingår i denna tjänst?',
         'serviceImage.required' => 'Bara png, jpeg jpg format',
     ]);
 
@@ -149,6 +166,9 @@ class ServiceController extends Controller
        Storage::disk('public')->put('images/'.$imageName, file_get_contents($img2));
 
         $service->title = $request->title;
+        $service->title2 = $request->title2;
+        $service->startsida = $request->startsida;
+        $service->menyNamn = $request->menyNamn;
         $service->bodyText = $request->bodyText;
         $service->serviceType = $request->serviceType;
         $service->description = $request->description;
@@ -158,6 +178,9 @@ class ServiceController extends Controller
         ->where('id', $service->id)
         ->update([
         'title' => $service->title,
+        'title2' => $service->title2,
+        'startsida' => $service->startsida,
+        'menyNamn' => $service->menyNamn,
         'bodyText' => $service->bodyText,
         'description' => $service->description,
         'descriptionImage' => $service->descriptionImage,

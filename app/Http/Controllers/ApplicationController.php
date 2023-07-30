@@ -15,7 +15,7 @@ class ApplicationController extends Controller
 
 public function __construct()
     {
-        $this->middleware('auth')->except(['store']);
+        $this->middleware('auth')->except(['store','create']);
 
     }
 
@@ -37,8 +37,13 @@ public function __construct()
      */
     public function create()
     {
-        $jobs = Job::all();
-        return view('backend.applications.create',compact('jobs'));
+        // $jobs = Job::all();
+        if(Auth::check()){
+            return view('backend.applications.create');
+        }
+        else{
+            return view('frontend.applications.create');
+        }
     }
 
 
@@ -65,7 +70,7 @@ public function __construct()
     ]
     );
         Application::create($request->all());
-        return redirect()->route('applications.index')->with('success','Din ansökan har nu skickats, Vi återkommer till dig inom kort');
+        return redirect()->route('jobs')->with('success','Din ansökan har nu skickats, Vi återkommer till dig inom kort');
         
     }
 

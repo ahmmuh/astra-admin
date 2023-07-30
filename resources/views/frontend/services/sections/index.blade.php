@@ -75,7 +75,7 @@
        
 
     </div>
-    <a  href="{{ route('services.show', $service->id) }}" class="btn btn-lg btn-warning my-auto">Mer om {{$service->serviceType}} <i class="fas fa-chevron-right"></i></a>
+    <a  href="{{ route('services.show', $service->id) }}" class="btn btn-lg btn-warning my-auto">Läs mer<i class="fas fa-chevron-right"></i></a>
   </div>
     </div>
     @endforeach

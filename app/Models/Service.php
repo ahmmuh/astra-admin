@@ -12,6 +12,9 @@ class Service extends Model
     ];
     protected $fillable = [
            'title',
+           'title2',
+           'startsida',
+            'menyNamn',
             'description',
             'descriptionImage',
             'serviceType',

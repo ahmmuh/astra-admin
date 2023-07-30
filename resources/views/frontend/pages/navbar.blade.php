@@ -11,7 +11,7 @@
   }
 
   header{
-    padding-top: 3rem;
+    /* padding-top: 3rem; */
   }
   main{
    margin-top: 2rem;
@@ -34,10 +34,10 @@
               Privat
             </a>
             <ul class="dropdown-menu">
-              {{-- @foreach ($private_services as $service)
+              @foreach ($private_services as $service)
               
-              <li><a class="dropdown-item" href="{{ route('privateservices.show',$service->id) }}">{{$service->title}}</a></li>
-              @endforeach --}}
+              <li><a class="dropdown-item" href="{{ route('privateservices.show',$service->id) }}">{{$service->menyNamn}}</a></li>
+              @endforeach
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -47,7 +47,7 @@
             <ul class="dropdown-menu">
               
               @foreach ($services as $service)
-              <li><a class="dropdown-item" href="{{ route('services.show', $service->id) }}" >{{$service->serviceType}}</a></li>
+              <li><a class="dropdown-item" href="{{ route('services.show', $service->id) }}" >{{$service->menyNamn}}</a></li>
               @endforeach
               {{-- <li><a class="dropdown-item" href="{{ url('frontend.pages.skol') }}">Skolstädning</a></li>
               <li><a class="dropdown-item" href="{{ url('frontend.pages.trapp') }}">Trappstädning</a></li>
@@ -65,7 +65,7 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ URL::route('jobs') }}">Jobba hos oss</a>
+            <a class="nav-link" href="{{ url('jobs') }}">Jobba hos oss</a>
             {{-- <a href="{{ URL::route('register') }}" >Register 1</a> --}}
             {{-- <a href="#">Jobb</a> --}}
 
