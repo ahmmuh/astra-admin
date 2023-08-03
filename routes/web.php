@@ -10,6 +10,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LogoController;
+use App\Http\Controllers\LinkController;
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PrivatServiceController;
@@ -72,5 +73,10 @@ Route::resource('contacts', ContactController::class);
 Route::resource('privateservices', PrivatServiceController::class);
 Route::resource('logos', LogoController::class);
 Route::resource('sending', SendingMailController::class);
+// Route::resource('links', LinkController::class);
+
+ Route::get('/frontend/pages/gdpr', [LinkController::class,'index'])->name('gdpr');
+ Route::get('/frontend/pages/verksamhet', [LinkController::class,'verksamhet'])->name('verksamhet');
+
 
 

@@ -17,9 +17,9 @@ class ServiceController extends Controller
     }
     public function index()
     {
+          $services = Service::all();
         
-        $services = Service::latest()->paginate(6);
-
+        // Users::select('id','name')->paginate(10);
              if (Auth::check()) {
        
                 return view('backend.services.index',compact('services'));
@@ -103,13 +103,16 @@ class ServiceController extends Controller
     public function show($id)
     {
      $service = Service::findOrFail($id);
+     $data = $service['extra'];
+
      if(Auth::check()){
-     return view('backend.services.show',compact('service'));
+      return view('backend.services.show',compact('service','data'));
 
      }
-     else{
+      else{
         return view('frontend.services.show',compact('service'));
      }
+
     }
 
     /**

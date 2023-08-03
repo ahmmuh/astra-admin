@@ -14,9 +14,7 @@
                     <div class="row">
                         @foreach($logosCollections as $logo)
                          <div class="col-3 align-self-center">
-									<img class="d-block w-100 px-3 mb-3" src="{{asset('/storage/images/' .$logo->logo)}}" style="max-height: 140px" width="100%" alt="">
-
-                                    
+						<img class="d-block w-100 px-3 mb-3" src="{{asset('/storage/images/' .$logo->logo)}}" style="max-height: 140px" width="100%" alt="">
 								</div>
                                 
                         @endforeach

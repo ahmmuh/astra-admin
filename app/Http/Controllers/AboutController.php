@@ -129,7 +129,7 @@ class AboutController extends Controller
         'text' => $about->text,
         'logo' => $about->logo,
     ]);
-    return redirect()->route('abouts.index')->with('success','Nyheten har uppdaterats');
+        return redirect()->route('abouts.index')->with('success','Nyheten har uppdaterats');
 
      }
 

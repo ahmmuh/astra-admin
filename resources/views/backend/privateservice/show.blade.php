@@ -5,9 +5,9 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">{{ $service->title }}</h4>
-            <p class="card-text">{{ $service->description }}</p>
+            <p class="card-text">{{ $service->bodyText }}</p>
+            
         </div>
-
          <div class="col d-flex gap-3 align-items-center" style="margin-left: 2rem">
                  <a href="{{ route('privateservices.edit', $service->id) }}" class="card-link"><i class="fa-regular fa-pen-to-square"></i></a> 
                 <form action="{{ route('services.destroy', $service->id)  }}" method="POST">

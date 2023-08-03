@@ -11,7 +11,7 @@
             <div class="col-lg-7 col-md-12">
                 <h2>{{$about->title}}</h2>
                 
-                <h4>{{$about->rubrik}}</h4>
+                <h4 class="pl-4">{{$about->rubrik}}</h4>
                 <p>
                     {{$about->text}}
                    </p>

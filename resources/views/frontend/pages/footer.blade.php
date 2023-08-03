@@ -33,12 +33,15 @@
             <div class="list-group">
                 <h5>  Mer info om våra tjänster</h5>
                 {{-- @foreach ($services as $service)
-                 @if (count($services) >= 5) 
+               
                        <a href="#"" class="list-group-item list-group-item-action">
-                    {{$service->title}}</a>
-                   @endif
+                    {{$service->menyNamn}}</a>
+                   
 
                 @endforeach --}}
+                 <a href="{{url('privateservices')}}" class="list-group-item list-group-item-action">Privattjänster</a>
+                <a href="{{url('services')}}" class="list-group-item list-group-item-action">Företagstjänster</a>
+
             </div>
         </div>
 
@@ -46,8 +49,8 @@
             <div class="list-group" id="footer-list">
                 <h5>Sociala medier & Policy</h5>
                 <a href="https://se.linkedin.com/in/abdirahman-yussuf-231baa169" target="_blank" class="list-group-item list-group-item-action">Besök oss på Linkedin</a>
-                <a href="{{url('gdpr')}}" class="list-group-item list-group-item-action">Dataskyddspolicy</a>
-                <a href="{{url('./company-policy')}}" class="list-group-item list-group-item-action">Verksamhetspolicy</a>
+                <a href="{{route('gdpr')}}" class="list-group-item list-group-item-action">Dataskyddspolicy</a>
+                <a href="{{route('verksamhet')}}" class="list-group-item list-group-item-action">Verksamhetspolicy</a>
             <a class="list-group-item list-group-item-action" href="{{ url('blogs') }}">Nyhet</a>
 
             </div>

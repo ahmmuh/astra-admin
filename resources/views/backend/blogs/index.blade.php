@@ -37,7 +37,7 @@
                     <div class="col">
                             <h4 class="card-title">{{$blog->title}}</h4>
                         <p class="card-text">{{$blog->description}} </p>
-                        <a href="{{ route('blogs.show',$blog->id) }}">Mer</a>
+                        <a href="{{ route('blogs.show',$blog->id) }}">Läs mer</a>
                     </div>
                 </div>
             </div>

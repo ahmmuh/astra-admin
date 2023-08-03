@@ -10,7 +10,7 @@
           <div class="col-md-3">
            <img class="card-img-top"  src="{{ asset('storage/images/'.$about->logo) }}" style="width: 240px" alt="Title">
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9" style="padding-left: .5rem">
             <div class="card-body">
               <h5 class="card-title">{{$about->title}}</h5>
               <p class="card-text">{{$about->rubrik}}</p>

@@ -26,16 +26,17 @@
                             </div>
                                 
                     </div>
-                       
-                  
-                          <div class="mb-3 col-lg-6 col-md-12">
+                    
+                    
+                    <div class="mb-3 col-lg-6 col-md-12">
+                                <img class="card-img-top"  src="{{ asset('storage/images/'.$about->logo) }}" style="width: 240px" alt="Title">
                             <input type="file" class="form-control" name="logo" id="logo" value="{{$about->logo}}" >
                               @error('logo')
                           <div class="alert alert-danger mt-1">{{ $message }}</div>
                                 @enderror
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block w-100">Uppdatera</button>
+                <button type="submit" class="btn btn-primary btn-block w-100 mt-4">Uppdatera</button>
                 </form>
     
 @endsection

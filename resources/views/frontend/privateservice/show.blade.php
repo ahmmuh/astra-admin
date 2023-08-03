@@ -30,6 +30,14 @@
                  </p>
                 </div>
             </div>
+             <div class="row d-flex justify-content-center">
+            <div class="col-lg-8 my-3">
+            @foreach ($service->extra as $item)
+            <span class="font-weight-bold" style="font-size: 1.2rem; font-style: italic; color: black;"> <i class="fa-solid fa-check fa-2xl text-success"></i> {{$item}} <br></span>
+            @endforeach
+            <hr style="border-bottom: 2px solid red;">
+        </div>
+            </div>
             @include('frontend.privateservice.sections.index')
 </div>
     

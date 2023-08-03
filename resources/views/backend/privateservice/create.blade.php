@@ -15,7 +15,7 @@
 
  <div class="mb-3">
                         <label for="title2" class="col-4 col-form-label">Rubrik nivå 2</label>
-                            <input type="text" class="form-control" name="title2" id="title2" placeholder="Rubrik nivå 2">
+                            <input type="text" class="form-control" name="title2" id="title2">
                             @error('title2')
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -78,7 +78,6 @@
                                 @enderror
                     </div>
 
-                    {{-- <input type="text" name="day[]" class="form-control" value="{{ $days[$i] }}" readonly/> --}}
 
                      <div class="mb-3 ">
                         <label for="serviceImage" class="col-4 col-form-label">Bild</label>
