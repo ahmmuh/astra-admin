@@ -65,20 +65,21 @@
 <div class="container mt-2 service-section">
   <div class="row">
     <h2>Se våra företagsjänster</h2>
-    @foreach ($services as $service)
+    @foreach ($services as $service )
         <div class="col-md-4 col-sm-6 item mb-2">
       <div class="card item-card card-block  h-100">
     <div class="card-body">
         <img src="{{ asset('/storage/images/' .$service->serviceImage)}}" style="heigth: auto"  alt="Photo of sunset">
         <h4 class="card-title mt-3 mb-3">{{$service->title}}</h4>
         <p class="card-text">{{$service->bodyText}}</p>
-       
-
     </div>
     <a  href="{{ route('services.show', $service->id) }}" class="btn btn-lg btn-warning my-auto">Läs mer<i class="fas fa-chevron-right"></i></a>
   </div>
     </div>
     @endforeach
+</div>
+    
+    
   </div>
   
 </div>

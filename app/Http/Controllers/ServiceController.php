@@ -17,16 +17,15 @@ class ServiceController extends Controller
     }
     public function index()
     {
-          $services = Service::all();
-        
-        // Users::select('id','name')->paginate(10);
+        // $services = Service::latest()->simplePaginate(2);
+            // $services = DB::table('services')->paginate(2);
+            $services = DB::table('services')->simplePaginate(2);
              if (Auth::check()) {
        
                 return view('backend.services.index',compact('services'));
 
 
      } else {
-        # code...
         return view('frontend.services.index',compact('services'));
 
      }
@@ -48,10 +47,9 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
        $request->validate([
-            'title' => 'required',
-            'title2' => 'required',
-            'startsida' => 'required',
-            'menyNamn' => 'required:max:10',
+            'title' => 'required|max:100',
+            'title2' => 'required|max:100',
+            'menyNamn' => 'required|max:10',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
@@ -61,10 +59,9 @@ class ServiceController extends Controller
 
         ],
      [
-        'title.required' => 'Titlen måste vara max 10 tecken',
-        'title2.required' => 'Titlen måste vara max 10 tecken',
-        'startsida.required' => 'Titlen måste vara max 10 tecken',
-        'menyNamn.required' => 'Titlen måste vara max 10 tecken',
+        'title.required' => 'Titlen måste vara max 100 tecken',
+        'title2.required' => 'Titlen måste vara max 100 tecken',
+        'menyNamn.required' => 'Titlen måste vara max 12 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',
@@ -130,9 +127,9 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $request->validate([
-            'title' => 'required',
-            'title2' => 'required',
-            'menyNamn' => 'required:max:10',
+            'title' => 'required|max:100',
+            'title2' => 'required|max:100',
+            'menyNamn' => 'required|max:10',
             'startsida' => 'required',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
@@ -143,8 +140,8 @@ class ServiceController extends Controller
 
         ],
      [
-        'title.required' => 'Titlen måste vara max 10 tecken',
-        'title2.required' => 'Titlen måste vara max 10 tecken',
+        'title.required' => 'Titlen måste vara max 100 tecken',
+        'title2.required' => 'Titlen måste vara max 100 tecken',
         'startsida.required' => 'Titlen måste vara max 10 tecken',
         'menyNamn.required' => 'Titlen måste vara max 10 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',

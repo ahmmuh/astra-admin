@@ -113,6 +113,6 @@ class SendingMailController extends Controller
     {
     $email = Email::findOrFail($id);
     $email->delete();
-    return redirect()->route('jobs.index')->with('danger','Ett meddelande har nu raderats');
+    return redirect()->route('sending.index')->with('danger','Ett meddelande har nu raderats');
     }
 }

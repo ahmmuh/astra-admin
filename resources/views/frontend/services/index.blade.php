@@ -87,7 +87,7 @@ html {
         </div>
         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
           <img src="{{asset('images/images-shaqo/fonster.png')}}" alt="bild"
-          style="max-width: 100%; z-index:1;">
+          style="max-width: 100%;">
         </div>
       </div>
  </header>

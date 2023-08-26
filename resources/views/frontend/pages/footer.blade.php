@@ -5,7 +5,7 @@
         <div class="col-lg-3 col-md-6 mb-3">
             <img style="width: 120px" src="{{url('../images/astra-logos/logo3.png')}}" alt="Astra-logo">
             <p>
-                På Astra Städ är vi proffs på städning. Vi är ett litet personligt städbolag. Varje månad utför vi löpande städuppdrag hos över 40 fasta företag i Göteborg.
+                På Astra Städ är vi proffs på städning. Vi är ett litet personligt städbolag. Varje månad utför vi löpande städuppdrag hos över 60 fasta företag i Göteborg.
             </p>
         </div>
             @foreach ($contacts as $contact)

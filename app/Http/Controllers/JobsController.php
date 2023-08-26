@@ -47,7 +47,7 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'jobTitle' => 'required:max:10',
+            'jobTitle' => 'required|max:10',
             'jobDescription' => 'required',
             'location' => 'required',
             'publiceradDatum' => 'required',

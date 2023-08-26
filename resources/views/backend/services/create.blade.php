@@ -22,7 +22,7 @@
                     </div>
 
  <div class="mb-3">
-                        <label for="startsida" class="col-4 col-form-label text-muted" style="font-size: .9rem; color: red !important;">Skriv ordet "startsida" med små bokstäver (bara om du publicerar text på startsida</label>
+                        <label for="startsida" class="col-4 col-form-label text-muted" style="font-size: .9rem; color: red !important;">Skriv ordet "startsida" med små bokstäver (bara om du publicerar text högst upp på startsida</label>
                             <input type="text" class="form-control" name="startsida" id="startsida" placeholder="start sida">
                             @error('startsida')
                           <div class="alert alert-danger">{{ $message }}</div>

@@ -49,9 +49,9 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'rubrik' => 'required',
-            'text' => 'required',
+            'title' => 'required|max:100',
+            'rubrik' => 'required|max:100',
+            'text' => 'required|max:300',
             'logo' => 'required|mimes:png,jpg,jpeg',
 
         ],
@@ -101,9 +101,9 @@ class AboutController extends Controller
     public function update(Request $request, About $about)
     {
         $request->validate([
-            'title' => 'required',
-            'rubrik' => 'required',
-            'text' => 'required',
+            'title' => 'required|max:100',
+            'rubrik' => 'required|max:100',
+            'text' => 'required|max:300',
             'logo' => 'required|mimes:png,jpg,jpeg',
 
         ],

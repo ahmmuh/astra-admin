@@ -2,6 +2,15 @@
 
 @section('content')
  <div class="container">
+  <div class="row">
+  @if ($emails->count() === 0)
+ <div class="col">
+      <div class="alert bg-warning" role="alert">
+          <h5 class="lead">Inkorgen är tom</h5> 
+      </div>
+      
+ </div>
+   @else 
      {{-- <a href="{{route('.create')}}" class="btn btn-warning mb-2">Skapa om oss sida</a> --}}
     @foreach ($emails as $email)
     <div class="row">
@@ -31,5 +40,5 @@
     @endforeach
           
  </div>
-       
+  @endif
 @endsection

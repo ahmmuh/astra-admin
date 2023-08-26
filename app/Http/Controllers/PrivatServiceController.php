@@ -49,9 +49,9 @@ class PrivatServiceController extends Controller
     {
         
        $request->validate([
-            'title' => 'required',
-            'title2' => 'required',
-            'menyNamn' => 'required:max:10',
+            'title' => 'required|max:100',
+            'title2' => 'required|max:100',
+            'menyNamn' => 'required|max:10',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
@@ -61,8 +61,8 @@ class PrivatServiceController extends Controller
 
         ],
      [
-        'title.required' => 'Titlen måste vara max 10 tecken',
-        'title2.required' => 'Titlen måste vara max 10 tecken',
+        'title.required' => 'Titlen måste vara max 100 tecken',
+        'title2.required' => 'Titlen måste vara max 100 tecken',
         'menyNamn.required' => 'Titlen måste vara max 10 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',
@@ -131,9 +131,9 @@ class PrivatServiceController extends Controller
     {
           
        $request->validate([
-            'title' => 'required',
-            'title2' => 'required',
-            'menyNamn' => 'required:max:10',
+            'title' => 'required|max:100',
+            'title2' => 'required|max:100',
+            'menyNamn' => 'required|max:10',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
@@ -143,8 +143,8 @@ class PrivatServiceController extends Controller
 
         ],
      [
-        'title.required' => 'Titlen måste vara max 10 tecken',
-        'title2.required' => 'Titlen måste vara max 10 tecken',
+        'title.required' => 'Titlen måste vara max 100 tecken',
+        'title2.required' => 'Titlen måste vara max 100 tecken',
         'menyNamn.required' => 'Titlen måste vara max 10 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',

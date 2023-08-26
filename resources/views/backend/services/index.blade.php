@@ -42,6 +42,9 @@
         </div>
          </div>
        @endforeach
+       <div class="col">
+           {{-- {!! $services->links() !!} --}}
+       </div>
     </div>
    </div>
       

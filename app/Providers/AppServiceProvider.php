@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 use Illuminate\Support\Facades\View;
-
+use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
+
 use DB;
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,7 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Paginator::useBootstrap();
         $ledigJobb = DB::table('jobs')->get();
+        // $services = Service::paginate(1);
         $services = DB::table('services')->get();
         // $extra = DB::table('services->extra')->get();
         $private_services = DB::table('private_services')->get();
