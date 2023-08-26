@@ -18,7 +18,6 @@
                                <button type="button" class="btn btn-md" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Jag vill ha en offert
                                 </button>
-                
                      </div>
                 </div>
         </div>

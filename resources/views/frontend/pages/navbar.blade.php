@@ -9,10 +9,6 @@
     right: 0;
     z-index: 1;
   }
-
-  header{
-    /* padding-top: 3rem; */
-  }
   main{
    margin-top: 2rem;
    padding-top: 4rem;
@@ -49,16 +45,6 @@
               @foreach ($services as $service)
               <li><a class="dropdown-item" href="{{ route('services.show', $service->id) }}" >{{$service->menyNamn}}</a></li>
               @endforeach
-              {{-- <li><a class="dropdown-item" href="{{ url('frontend.pages.skol') }}">Skolstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.trapp') }}">Trappstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.butik') }}">Butikstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.bygg') }}">Byggstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.golv') }}">Golvvård</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.lager') }}">Lagerstädning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.frukt') }}">Fruktkorg</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.windows') }}">Fönsterputsning</a></li>
-              <li><a class="dropdown-item" href="{{ url('frontend.pages.matta') }}">Mattservice</a></li> --}}
-
             </ul>
           </li>
 
@@ -66,21 +52,15 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url('jobs') }}">Jobba hos oss</a>
-            {{-- <a href="{{ URL::route('register') }}" >Register 1</a> --}}
-            {{-- <a href="#">Jobb</a> --}}
-
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('abouts') }}">Om oss</a>
+            <a class="nav-link" href="{{ url('abouts') }}">Om AstraStäd</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('contacts') }}">Kontakt</a>
+            <a class="nav-link" href="{{ url('contacts') }}">Kontakta oss</a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="{{ url('clientblogs') }}">Nyhet</a>
-          </li> --}}
         </ul>
       </div>
     </div>

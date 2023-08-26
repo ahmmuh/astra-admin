@@ -114,7 +114,8 @@ html {
 
   <div class="container" id="services">
   <div class="row">
-  @include('frontend.services.sections.index');
+ @include('frontend.services.sections.index')
+
  </div>
 </div>
 @endsection

@@ -17,16 +17,16 @@ class ServiceController extends Controller
     }
     public function index()
     {
-        // $services = Service::latest()->simplePaginate(2);
-            // $services = DB::table('services')->paginate(2);
-            $services = DB::table('services')->simplePaginate(2);
+       $services = Service::paginate(3);
              if (Auth::check()) {
        
                 return view('backend.services.index',compact('services'));
 
 
      } else {
-        return view('frontend.services.index',compact('services'));
+            $test = "Ahmed";
+
+        return view('frontend.services.index',compact(['services']));
 
      }
     }

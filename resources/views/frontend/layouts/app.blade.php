@@ -39,15 +39,22 @@
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-    <script src="{{asset('js/jquery.js')}}"></script>
+    {{-- <script src="{{asset('js/jquery.js')}}"></script> --}}
+    <script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.6.0/pagination.min.css" integrity="sha512-K1k7jSn9RDKEcn/ugqVVvWYu0bcS3q1w6m/5pQSnrj0bCfIqF6Wk49lkmckSb4wglvTP9V17LtS0q0XxYccXbg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 @push('head')
 
 @endpush
 <script src="{{asset('js/background-image.js')}}"></script>
+<script src="{{asset('js/displayContent.js')}}"></script>
 
 
 
@@ -55,27 +62,17 @@
 <body>
       @include('frontend.pages.navbar')
       <main>
-               @yield('header')
-
-
-            @yield('content')
-              {{-- @include('frontend.pages.staff') --}}
-
-               {{-- @include('pages.service') --}}
+        @yield('header')
+              {{-- @yield('service-pagination') --}}
+              @yield('content')
               @include('frontend.pages.logos')    
               @yield('logos')
                @include('frontend.pages.questions_answers')
             </main>
 
             @include('frontend.pages.footer')
-<script src="{{asset('js/owl.carousel.js')}}"></script>
-<script src="{{asset('js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('js/jquery.js')}}"></script>
-<script>
-    $(".owl-carousel").owlCarousel({
-    navigation : true
-  })
-</script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.6.0/pagination.min.js" integrity="sha512-GzbaI5EsNzdEUq6/2XLYpr1y9CUZRIVsUeWTAFgULtQa5jZ3Nug8i0nZKM6jp9NffBCZhymPPQFcF0DK+JkRpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 </html>
