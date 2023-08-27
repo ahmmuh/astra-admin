@@ -49,9 +49,9 @@ class PrivatServiceController extends Controller
     {
         
        $request->validate([
-            'title' => 'required|max:100',
-            'title2' => 'required|max:100',
-            'menyNamn' => 'required|max:10',
+            'title' => 'required|min:150|max:300',
+            'title2' => 'required|min:150|max:300',
+            'menyNamn' => 'required',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
@@ -61,9 +61,9 @@ class PrivatServiceController extends Controller
 
         ],
      [
-        'title.required' => 'Titlen måste vara max 100 tecken',
-        'title2.required' => 'Titlen måste vara max 100 tecken',
-        'menyNamn.required' => 'Titlen måste vara max 10 tecken',
+        'title.required' => 'Titlen måste vara max 300 och min 150 tecken ',
+        'title2.required' => 'Titlen måste vara max 300 och min 150 tecken ',
+        'menyNamn.required' => 'Manynamn är ett måste',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',
@@ -81,7 +81,7 @@ class PrivatServiceController extends Controller
         
         $service->title = $request->title;
         $service->title2 = $request->title2;
-        $service->menyNamn = $request->bodyText;
+        $service->menyNamn = $request->menyNamn;
         $service->bodyText = $request->bodyText;
         $service->description = $request->description;
         $service->extra = $request->extra;
@@ -131,9 +131,9 @@ class PrivatServiceController extends Controller
     {
           
        $request->validate([
-            'title' => 'required|max:100',
-            'title2' => 'required|max:100',
-            'menyNamn' => 'required|max:10',
+            'title' => 'required|max:180',
+            'title2' => 'required|max:180',
+            'menyNamn' => 'required|max:30',
             'bodyText' => 'required|min:250|max:400',
             'description' => 'required|min:400|max:550',
             'descriptionImage' => 'required|mimes:png,jpg,jpeg',
@@ -143,9 +143,9 @@ class PrivatServiceController extends Controller
 
         ],
      [
-        'title.required' => 'Titlen måste vara max 100 tecken',
-        'title2.required' => 'Titlen måste vara max 100 tecken',
-        'menyNamn.required' => 'Titlen måste vara max 10 tecken',
+        'title.required' => 'Titlen måste vara max 180 tecken',
+        'title2.required' => 'Titlen måste vara max 180 tecken',
+        'menyNamn.required' => 'Titlen måste vara max 30 tecken',
         'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
         'description.required' => 'En beskrivning med 250 tecken (min)',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',

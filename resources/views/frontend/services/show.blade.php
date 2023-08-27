@@ -36,12 +36,7 @@
             <hr style="border-bottom: 2px solid red;">
         </div>
             </div>
-          <div class="row">
-            {{-- @include('frontend.services.sections.index') --}}
-              {{-- @yield('services') --}}
-          </div>
-</div>
-
-    
+ {{-- @include('frontend.services.sections.index') --}}
+</div>    
 @endsection
 

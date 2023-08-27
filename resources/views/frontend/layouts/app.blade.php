@@ -65,6 +65,8 @@
         @yield('header')
               {{-- @yield('service-pagination') --}}
               @yield('content')
+            @include('frontend.services.sections.index')
+            {{-- @yield('services') --}}
               @include('frontend.pages.logos')    
               @yield('logos')
                @include('frontend.pages.questions_answers')

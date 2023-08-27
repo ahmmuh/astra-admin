@@ -81,13 +81,13 @@ html {
            
        @endforeach
         <div class="btns">
-          <a href="#services" class="btn btn-lg btn-warning mr-1"> Företagsjänster</a>
-          <a href="{{ url('privateservices') }}" class="btn btn-lg btn-warning"> Privattjänster</a>
+          <a href="#services" class="btn btn-lg btn-warning mr-1">Företagsjänster</a>
+          <a href="{{ url('privateservices') }}" class="btn btn-lg btn-warning">Privattjänster</a>
         </div>
         </div>
         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
           <img src="{{asset('images/images-shaqo/fonster.png')}}" alt="bild"
-          style="max-width: 100%;">
+          style="max-width: 100%; z-index:1;">
         </div>
       </div>
  </header>
@@ -111,11 +111,10 @@ html {
  @endforeach
  </div>
   </div>
-
+{{-- 
   <div class="container" id="services">
   <div class="row">
- @include('frontend.services.sections.index')
-
+  @include('frontend.services.sections.index');
  </div>
-</div>
+</div> --}}
 @endsection

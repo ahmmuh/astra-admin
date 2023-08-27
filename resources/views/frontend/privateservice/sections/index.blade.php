@@ -76,6 +76,7 @@
   </div>
     </div>
     @endforeach
+    {{ $private_services->links() }}
   </div>
   
 </div>

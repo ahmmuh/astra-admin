@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                    <h3>{{$service->title}}</h3>
+                    <h4>{{$service->title}}</h4>
                     <p>
                         {{$service->bodyText}}
                  </p>
@@ -24,7 +24,7 @@
                     <img src="{{ asset('storage/images/'.$service->descriptionImage) }}" alt="Service bild" style="max-width: 100%">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                    <h3>{{$service->title2}}</h3>
+                    <h5>{{$service->title2}}</h5>
                     <p>
                         {{$service->description}}
                  </p>

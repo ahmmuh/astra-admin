@@ -3,7 +3,7 @@
 <style>
 
 .service-section img{
-  height:150px;
+  height:200px;
   width:100%;
 }
 
@@ -18,7 +18,7 @@
 
 }
 .item-card-title{  
-  font-size:15px;
+  /* font-size:15px; */
   transition:1s;
   cursor:pointer;
 }
@@ -72,7 +72,7 @@
       <div class="card item-card card-block  h-100">
     <div class="card-body">
         <img src="{{ asset('/storage/images/' .$service->serviceImage)}}" alt="Photo of sunset">
-        <h4 class="card-title mt-3 mb-3">{{$service->title}}</h4>
+        <h5 class="card-title mt-3 mb-3">{{$service->title}}</h5>
         <p class="card-text">{{$service->bodyText}}</p>
         
     </div>

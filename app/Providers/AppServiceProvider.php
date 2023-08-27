@@ -23,12 +23,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
        $showAll = true;
+       $notShowAll = false;
         Paginator::useBootstrapFive();
         $ledigJobb = DB::table('jobs')->get();
         // $services = Service::paginate(1);
         $services = DB::table('services')->paginate(3);
         // $extra = DB::table('services->extra')->get();
-        $private_services = DB::table('private_services')->get();
+        $private_services = DB::table('private_services')->paginate(3);
         $blogs = DB::table('blogs')->get();
         $contacts = DB::table('contacts')->get();
         $abouts = DB::table('abouts')->get();
@@ -41,6 +42,7 @@ class AppServiceProvider extends ServiceProvider
         view()->share('contacts', $contacts);
         view()->share('abouts', $abouts);
         view()->share('showAll', $showAll);
+        view()->share('notShowAll', $notShowAll);
         view()->share('private_services', $private_services);
 
     }

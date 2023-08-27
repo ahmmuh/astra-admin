@@ -19,13 +19,10 @@ class ServiceController extends Controller
     {
        $services = Service::paginate(3);
              if (Auth::check()) {
-       
                 return view('backend.services.index',compact('services'));
 
 
      } else {
-            $test = "Ahmed";
-
         return view('frontend.services.index',compact(['services']));
 
      }
@@ -79,9 +76,9 @@ class ServiceController extends Controller
           // second image till beskrivning
         $img2 = $request->descriptionImage;
         $imageName = $img2->getClientOriginalName();
-        $img2 = $request->descriptionImage;
        $service->descriptionImage = $imageName;
        Storage::disk('public')->put('images/'.$imageName, file_get_contents($img2));
+       
         $service->extra = $request->extra;
         $service->title = $request->title;
         $service->title2 = $request->title2;

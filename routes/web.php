@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\StartsidaController;
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PrivatServiceController;
@@ -59,8 +60,9 @@ Route::get('send', [ContactMail::class,'envelope']);
 
 // Route::get('/order',function(){
 //     return new OrderMail();
-// });
 
+// });
+Route::resource('startsida', StartsidaController::class);
 Auth::routes();
 Route::resource('blogs', BlogController::class);
 Route::resource('jobs', JobsController::class);

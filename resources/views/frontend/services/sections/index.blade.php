@@ -1,6 +1,5 @@
-{{-- @extends('frontend.layouts.app')
-@section('content') --}}
-    <style>
+
+<style>
 
 .service-section img{
   height:200px;
@@ -90,4 +89,6 @@
 </div>
   </div>
 </div>                       
-{{-- @endsection --}}
+
+
+

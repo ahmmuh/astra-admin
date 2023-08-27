@@ -24,7 +24,7 @@
       
   @else
    <div class="col">
-    <a href="{{ route('privateservices.create') }}" type="button" class="btn btn-warning">Lägg till privat ny tjänst</a>
+    <a href="{{ route('privateservices.create') }}" type="button" class="btn btn-warning">Lägg till ny privat tjänst</a>
 
     <div class="row mt-3">
             @foreach ($services as $service)
