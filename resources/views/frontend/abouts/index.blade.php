@@ -5,7 +5,7 @@
        @foreach ($abouts as $about)
         <div class="row">
             <div class="col-lg-5 col-md-12">
-            <img src="{{ asset('/storage/images/' .$about->logo)}}" style="heigth: auto"  alt="Photo of sunset">
+            <img src="{{ asset('/storage/images/' .$about->logo)}}" style="width: 160px"  alt="Photo of sunset">
 
             </div>
             <div class="col-lg-7 col-md-12">
@@ -20,6 +20,10 @@
         </div>
            
        @endforeach
+
+       <div class="row">
+         @include('frontend.services.sections.index')
+       </div>
  </div>
        
 @endsection

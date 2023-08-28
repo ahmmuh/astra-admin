@@ -21,7 +21,7 @@
                     <img src="{{ asset('storage/images/'.$service->descriptionImage) }}" alt="Service bild" style="max-width: 100%">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                    <h3>{{$service->title2}}</h3>
+                    <h4>{{$service->title2}}</h4>
                     <p>
                         {{$service->description}}
                  </p>
@@ -36,7 +36,7 @@
             <hr style="border-bottom: 2px solid red;">
         </div>
             </div>
- {{-- @include('frontend.services.sections.index') --}}
+ @include('frontend.services.sections.index')
 </div>    
 @endsection
 

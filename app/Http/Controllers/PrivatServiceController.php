@@ -19,7 +19,7 @@ class PrivatServiceController extends Controller
     
     public function index()
     {
-        $services = PrivateService::all();
+        $services = DB::table('private_services')->paginate(3);
         if (Auth::check()) {
        
                 return view('backend.privateservice.index',compact('services'));

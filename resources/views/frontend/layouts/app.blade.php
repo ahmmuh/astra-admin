@@ -63,10 +63,7 @@
       @include('frontend.pages.navbar')
       <main>
         @yield('header')
-              {{-- @yield('service-pagination') --}}
               @yield('content')
-            @include('frontend.services.sections.index')
-            {{-- @yield('services') --}}
               @include('frontend.pages.logos')    
               @yield('logos')
                @include('frontend.pages.questions_answers')
@@ -76,5 +73,8 @@
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.6.0/pagination.min.js" integrity="sha512-GzbaI5EsNzdEUq6/2XLYpr1y9CUZRIVsUeWTAFgULtQa5jZ3Nug8i0nZKM6jp9NffBCZhymPPQFcF0DK+JkRpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
 </body>
 </html>

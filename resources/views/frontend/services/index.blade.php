@@ -73,22 +73,21 @@ html {
  <header>
    <div class="row">
       <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-       @foreach ($services as $service)
-        @if ($service->startsida === 'startsida')
-          <h3 class="title">{{$service->title}} <strong> Lorem ipsum dolor sit amet.</strong></h3>
-        <p>{{$service->description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, iusto!</p>
-        @endif
-           
+       @foreach ($homePages as $homePage)
+          <h3 class="title">{{$homePage->title}} </h3>
+        <p>{{$homePage->description}} </p>
        @endforeach
         <div class="btns">
-          <a href="#services" class="btn btn-lg btn-warning mr-1">Företagsjänster</a>
-          <a href="{{ url('privateservices') }}" class="btn btn-lg btn-warning">Privattjänster</a>
+          <a href="{{ route('services.index') }}" class="btn btn-lg btn-warning mr-1">Företagsjänster</a>
+          <a href="{{ route('privateservices.index') }}" class="btn btn-lg btn-warning">Privattjänster</a>
         </div>
         </div>
-        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-          <img src="{{asset('images/images-shaqo/fonster.png')}}" alt="bild"
+        @if ($homePages->count() >0)
+          <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+          <img src="{{ asset('storage/images/'.$homePage->welcomeImage) }}" alt="bild"
           style="max-width: 100%; z-index:1;">
         </div>
+        @endif
       </div>
  </header>
   </div>
@@ -97,24 +96,21 @@ html {
   <div class="container mt-4">
     <hr>
     <div class="row">
-  @foreach ($services as $service)
-  @if ($service->startsida === 'startsida')
+  @if ($homePages)
+       @foreach ($homePages as $homePage)
       <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-    <img src="{{ asset('storage/images/'.$service->descriptionImage) }}" style="max-height: 100%; z-index: -1; max-width: 100%;" alt="" >
+    <img src="{{ asset('storage/images/'.$homePage->descriptionImage) }}" style="max-height: 100%; z-index: -1; max-width: 100%;" alt="" >
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-    <h4 class="text-danger">{{$service->title2}}</h4>
-    <p>{{$service->description}}</p>
+    <h4>{{$homePage->title2}}</h4>
+    <p>{{$homePage->description}}</p>
     <a href="{{ url('contacts') }}" class="btn btn-warning">Kontakta oss</a>
   </div>
-  @endif
  @endforeach
+  @endif
+ </div>
+ <div class="row">
+ @include('frontend.services.sections.index')
  </div>
   </div>
-{{-- 
-  <div class="container" id="services">
-  <div class="row">
-  @include('frontend.services.sections.index');
- </div>
-</div> --}}
 @endsection

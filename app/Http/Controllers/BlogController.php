@@ -19,7 +19,8 @@ class BlogController extends Controller
     }
     public function index()
     {
-        $blogs =  Blog::latest()->simplePaginate(3);
+        $blogs = DB::table('blogs')->paginate(2);
+
         if(Auth::check()){
             return view('backend.blogs.index',compact('blogs'));
 
@@ -43,15 +44,15 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required:max:10',
-            'bodyText' => 'required|max:120',
+            'title' => 'required:max:60',
+            'bodyText' => 'required|max:200',
             'description' => 'required|min:300',
             'blogImage' => 'required|mimes:png,jpg,jpeg',
 
         ],
         [ 
-        'title.required' => 'Detta fält är obligatoriskt (titel, max 10 tecken)',
-        'bodyText.required' => 'Detta fält är obligatoriskt (kort text, max 120 tecken)',
+        'title.required' => 'Detta fält är obligatoriskt (titel, max 60 tecken)',
+        'bodyText.required' => 'Detta fält är obligatoriskt (kort text, max 200 tecken)',
         'description.required' => 'Detta fält är obligatoriskt (Längre text, min 300 tecken)',
         'blogImage.required' => 'Detta fält är obligatoriskt (bild format png, jpg eller jpeg)',
         ]);

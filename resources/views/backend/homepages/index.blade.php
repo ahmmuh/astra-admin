@@ -6,25 +6,32 @@
         {{ session()->get('success') }}
     </div>
 @endif
-
-    @if(session()->has('danger'))
-    <div class="alert alert-danger">
-        {{ session()->get('danger') }}
+@if ($homePages->count() >0)
+ <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <strong>OBS!! Det finns text på startsida</strong> 
     </div>
 @endif
 <div class="row">
+    
+    <script>
+      var alertList = document.querySelectorAll('.alert');
+      alertList.forEach(function (alert) {
+        new bootstrap.Alert(alert)
+      })
+    </script>
+    
   @if ($homePages->count() === 0)
  <div class="col">
       <div class="alert alert-success" role="alert">
           <h5 class="lead">Du har ingen text på startsida</h5>
           <a href="{{ route('startsida.create') }}" type="button" class="btn btn-warning">Publicera text på startsida</a>
       </div>
-      
  </div>
       
   @else
    <div class="col">
-    <a href="{{ route('startsida.create') }}" type="button" class="btn btn-warning">Publicera text på startsida</a>
+    {{-- <a href="{{ route('startsida.create') }}" type="button" class="btn btn-warning">Publicera text på startsida</a> --}}
 
     <div class="row mt-3">
             @foreach ($homePages as $homePage)

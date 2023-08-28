@@ -16,7 +16,6 @@
 
 }
 .item-card-title{  
-  font-size:15px;
   transition:1s;
   cursor:pointer;
 }

@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+<style>
+    .text-muted{
+        display: none;
+    }
+</style>
 @section('content')
 <div class="container mb-5">
     @if(session()->has('success'))
@@ -26,8 +30,6 @@
       
   @else     
         <div class="col m-2">
-            {{ $blogs->links() }}
-
             @foreach ($blogs as $blog)
             <div class="card m-2">
                 <div class="card-body d-flex gap-3">
@@ -42,13 +44,13 @@
                 </div>
             </div>
                 @endforeach
+                {{ $blogs->links() }} 
             </div>
                 
             @endif
 
 
         </div>
-        <hr>
     </div>
 </div>
 @endsection

@@ -1,6 +1,6 @@
-@extends('frontend.layouts.app')
+{{-- @extends('frontend.layouts.app')
 @section('content')
-<div class="row w-75 m-auto pt-4">
+<div class="row w-75 m-auto pt-4"> --}}
   {{-- @if ($jobs->count() === 0)
  <div class="col">
       <div class="alert alert-warning" role="alert">
@@ -10,8 +10,8 @@
  </div>
       
   @else --}}
-  <div class="col">        
-          <h5 class=" text-success">Vi har {{$jobs->count()}} lediga jobb</h5>
+  {{-- <div class="col">        
+          <h5 class=" text-success">Vi har {{$jobs->count()}} lediga jobb Ahmed</h5>
           <div class="accordion mb-2" id="accordionExample">
            @foreach ($jobs as $index => $job)
             <div class="accordion-item">
@@ -36,8 +36,8 @@
             
             @endforeach
           </div>
-        </div>
+        </div> --}}
       
   {{-- @endif --}}
-</div>
-@endsection
+{{-- </div>
+@endsection --}}

@@ -19,8 +19,7 @@ class StartsidaController extends Controller
         return view('backend.homepages.index',compact('homePages'));
      } 
      else {
-        return "ok";
-        // view('frontend.homepages.index',compact(['homePages']));
+        view('frontend.services.index',compact(['homePages']));
 
      }
     }
@@ -112,54 +111,9 @@ class StartsidaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, StartSida $startsida)
     {
-    //   $request->validate([
-    //         'title' => 'required|max:100',
-    //         'title2' => 'required|max:100',
-    //         'bodyText' => 'required|min:250|max:400',
-    //         'welcomeImage' => 'required|mimes:png,jpg,jpeg',
-    //         'description' => 'required|min:400|max:550',
-    //         'descriptionImage' => 'required|mimes:png,jpg,jpeg',
-    //     ],
-    //  [
-    //     'title.required' => 'Titlen måste vara max 100 tecken',
-    //     'title2.required' => 'Titlen måste vara max 100 tecken',
-    //     'bodyText.required' => 'Tjänsten måste ha beskrivning, 250 tecken',
-    //     'welcomeImage.required' => 'Bara png, jpeg jpg format',
-    //     'description.required' => 'En beskrivning med 250 tecken (min)',
-    //     'descriptionImage.required' => 'Bara png, jpeg jpg format',
-    // ]);
-    //     $startsida = new Startsida();
-        
-    //     $img = $request->welcomeImage;
-    //     $img_name = $img->getClientOriginalName();
-    //     $startsida->welcomeImage = $img_name;
-    //     Storage::disk('public')->put('images/' .$img_name, file_get_contents($img));
-
-    //       // second image till beskrivning
-    //     $img2 = $request->descriptionImage;
-    //     $imageName = $img2->getClientOriginalName();
-    //     $startsida->descriptionImage = $imageName;
-    //     Storage::disk('public')->put('images/'.$imageName, file_get_contents($img2));
-
-    //     $startsida->title = $request->title;
-    //     $startsida->title2 = $request->title2;
-    //     $startsida->bodyText = $request->bodyText;
-    //     $startsida->description = $request->description;
-
-    //      $result = DB::table('homepages')
-    //     ->where('id', $startsida->id)
-    //     ->update([
-    //     'title' => $startsida->title,
-    //     'title2' => $startsida->title2,
-    //     'bodyText' => $startsida->bodyText,
-    //     'description' => $startsida->description,
-    //     'descriptionImage' => $startsida->descriptionImage,
-    //     'welcomeImage' => $startsida->welcomeImage,
-    // ]);
-
-    //   $startsida->update($request->all());
+  
      $request->validate([
             'title' => 'required|max:200',
             'title2' => 'required|max:200',
@@ -176,7 +130,6 @@ class StartsidaController extends Controller
         'description.required' => 'En beskrivning med 250 tecken (min) 400 max',
         'descriptionImage.required' => 'Bara png, jpeg jpg format',
     ]);
-        $startsida = new Startsida();
         
         $img = $request->welcomeImage;
         $img_name = $img->getClientOriginalName();
@@ -193,6 +146,7 @@ class StartsidaController extends Controller
         $startsida->title2 = $request->title2;
         $startsida->bodyText = $request->bodyText;
         $startsida->description = $request->description;
+
         $result = DB::table('homepages')
         ->where('id', $startsida->id)
         ->update([
@@ -203,8 +157,8 @@ class StartsidaController extends Controller
         'descriptionImage' => $startsida->descriptionImage,
         'welcomeImage' => $startsida->welcomeImage,
     ]);
-        return redirect()->route('startsida.index')->with('success' ,'Texten har uppdaterats');
-    }
+ return redirect()->route('startsida.index')->with('success' ,'Texten har uppdaterats');
+}
 
     /**
      * Remove the specified resource from storage.

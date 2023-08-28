@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         @include('navbar')
-        <main class="py-4 container">
+        <main class="py-4 container" style="margin-top: 4rem">
         <div class="row">
             <div class="col-4">
                 @include('layouts.sidebar')

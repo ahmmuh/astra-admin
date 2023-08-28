@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-md navbar-primay bg-primary shadow-sm">
+ <nav class="navbar navbar-expand-md navbar-primay fixed-top bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     AstraStäd AB

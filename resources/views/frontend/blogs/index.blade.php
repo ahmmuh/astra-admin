@@ -8,7 +8,7 @@
         <div class="card mb-2">
         <div class="row g-0">
           <div class="col-lg-4 col-md-12">
-            <img src="{{ asset('storage/images/'.$blog->blogImage) }}" class="img-fluid rounded-start" style="max-height: 100%; max-width: 100%;" >
+            <img src="{{ asset('storage/images/'.$blog->blogImage) }}" class="img-fluid rounded-start" style="height: 300px; width: 100%;" >
           </div>
           <div class="col-lg-8 col-md-12">
             <div class="card-body">
@@ -21,7 +21,7 @@
         </div>
       </div>
    @endforeach
-
+   {{ $blogs->links() }} 
 </div>
 </div>
    

@@ -62,20 +62,16 @@ Route::get('send', [ContactMail::class,'envelope']);
 //     return new OrderMail();
 
 // });
-Route::resource('startsida', StartsidaController::class);
 Auth::routes();
+Route::resource('startsida', StartsidaController::class);
 Route::resource('blogs', BlogController::class);
 Route::resource('jobs', JobsController::class);
 Route::resource('services', ServiceController::class);
 Route::resource('applications', ApplicationController::class);
-// Route::resource('apply', ApplyJobController::class);
 Route::resource('contacts', ContactController::class);
-// Route::resource('clientcontacts', ClientContactController::class);
-// Route::resource('clientblogs', ClientBlogController::class);
 Route::resource('privateservices', PrivatServiceController::class);
 Route::resource('logos', LogoController::class);
 Route::resource('sending', SendingMailController::class);
-// Route::resource('links', LinkController::class);
 
  Route::get('/frontend/pages/gdpr', [LinkController::class,'index'])->name('gdpr');
  Route::get('/frontend/pages/verksamhet', [LinkController::class,'verksamhet'])->name('verksamhet');

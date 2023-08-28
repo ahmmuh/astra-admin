@@ -4,15 +4,12 @@
 <div class="container-fluid ml-4">
     <a name="" id="" class="btn" href="{{ route('startsida.index') }}" role="button">
         <i class="fa-solid fa-2xl fa-chevron-left"></i>
-
     </a>
-
 </div>
     <div class="row">
         <div class="col">
             <div class="container">
-
-            <form action="{{ route('startsida.update', $startsida) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('startsida.update', $startsida->id) }}" method="POST" enctype="multipart/form-data">
                      @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -38,7 +35,7 @@
                                   @error('welcomeImage')
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                          <img class="card-img-top"  src="{{ asset('storage/images/'.$startsida->welcomeImage) }}" style="width: 240px" alt="Title">
+                          <img class="card-img-top"  src="{{ asset('storage/images/' .$startsida->welcomeImage) }}" style="width: 240px" />
                     </div>
 
                 <div class="mb-3">
@@ -65,7 +62,7 @@
                                   @error('descriptionImage')
                           <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                          <img class="card-img-top"  src="{{ asset('storage/images/'.$startsida->descriptionImage) }}" style="width: 240px" alt="Title">
+                          <img class="card-img-top"  src="{{ asset('storage/images/'.$startsida->descriptionImage) }}" style="width: 240px" />
                     </div>
                     <div class="mb-3 ">
                             <button type="submit" class="btn btn-success">Uppdatera</button>

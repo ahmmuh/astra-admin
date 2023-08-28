@@ -30,10 +30,11 @@ class AppServiceProvider extends ServiceProvider
         $services = DB::table('services')->paginate(3);
         // $extra = DB::table('services->extra')->get();
         $private_services = DB::table('private_services')->paginate(3);
-        $blogs = DB::table('blogs')->get();
+        $blogs = DB::table('blogs')->paginate(2);
         $contacts = DB::table('contacts')->get();
         $abouts = DB::table('abouts')->get();
         $logos = DB::table('logos')->get();
+        $homePages = DB::table('homePages')->get();
 
         view()->share('blogs', $blogs);
         // view()->share('extra', $extra);
@@ -41,6 +42,7 @@ class AppServiceProvider extends ServiceProvider
         view()->share('services', $services);
         view()->share('contacts', $contacts);
         view()->share('abouts', $abouts);
+        view()->share('homePages', $homePages);
         view()->share('showAll', $showAll);
         view()->share('notShowAll', $notShowAll);
         view()->share('private_services', $private_services);

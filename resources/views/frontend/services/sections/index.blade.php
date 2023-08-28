@@ -75,7 +75,7 @@
         <div class="col-md-4 col-sm-6 item mb-2 paginateClass">
       <div class="card item-card card-block  h-100">
     <div class="card-body">
-        <img src="{{ asset('/storage/images/' .$service->serviceImage)}}" style="heigth: auto"  alt="Photo of sunset">
+        <img src="{{ asset('/storage/images/' .$service->serviceImage)}}"   alt="Photo of sunset">
         <h4 class="card-title mt-3 mb-3">{{$service->title}}</h4>
         <p class="card-text">{{$service->bodyText}} </p>
     </div>
