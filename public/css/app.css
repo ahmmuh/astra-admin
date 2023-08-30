@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans:ital,wght@1,700&family=Roboto:ital@0;1&display=swap");
 * {
     padding: 0;
     margin: 0;
@@ -6,15 +7,24 @@
 
 body {
     position: relative;
-    background-color: whitesmoke !important;
     font-family: "Cormorant Garamond", serif !important;
     font-family: "Josefin Sans", sans-serif !important;
+    font-family: "Roboto", sans-serif !important;
+    background-color: whitesmoke !important;
 }
 
-h1 {
-    color: black;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Cormorant Garamond", serif;
+    font-family: "Josefin Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-
+* p {
+    font-size: 1.2rem !important;
+}
 .carousel-caption p {
     font-size: 1.2rem;
 }
@@ -165,8 +175,12 @@ iframe {
     background-color: #0090db;
     padding: 2rem;
 }
+.footer .container-fluid {
+    padding: 0 4rem;
+    max-width: 100%;
+}
 
-.footer .container .row .col-lg-3 .list-group a,
+.footer .container-fluid .row .col-lg-3 .list-group a,
 .footer .container .row .col-lg-3 .list-group a {
     background-color: transparent;
     color: white;

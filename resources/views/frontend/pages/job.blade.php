@@ -1,10 +1,16 @@
 @extends('frontend.layouts.app')
 @section('content')
-<div class="row w-75 m-auto pt-4">
+<style>
+  #row{
+width: 63%;
+margin: 0 auto;
+  }
+</style>
+<div class="row  pt-4" id="row">
   @if ($jobs->count() === 0)
  <div class="col">
       <div class="alert alert-warning" role="alert">
-          <h5 class="lead">Vi har inga lediga jobb just nu</h5>
+        <h5 class="lead"><span class="badge alert alert-danger">Vi har inga lediga jobb just nu</span></h5>
       </div>
       
  </div>
@@ -12,16 +18,14 @@
   @else
 <div class="row bg-light">
   <div class="col mr-3">
- <h5 class=" text-dark">Vi har {{$jobs->count()}} lediga jobb</h5>
+ <h5 class=" text-dark"> <span class="badge bg-primary">lediga jobb: {{$jobs->count()}} </span>  </h5> 
   </div>
 </div>
 @foreach ($jobs as $job)
         <div class="card mb-2 p-3" >
         <div class="row g-0">
-          <div class="col d-flex bg-secondary  text-white justify-content-center align-items-center">
+          <div class="col d-flex text-dark justify-content-center align-items-center">
             <h4>{{$job->jobTitle}}</h4>
-          {{-- <img class="card-img-top " style="width: 80%;" src="{{url('images/astra-logos/logo5.png')}}"  alt="Bild"> --}}
-
           </div>
           <div class="col-lg-9 col-md-12">
             <div class="card-body">

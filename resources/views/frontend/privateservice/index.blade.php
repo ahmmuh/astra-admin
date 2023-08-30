@@ -64,8 +64,12 @@
 </style>
   {{-- service section --}}
 <div class="container mt-2 service-section">
+   <div class="row p-5">
+    <div class="col">
+      <h1>Här kan ni läsa lite mer om våra privattjänster</h1>
+    </div>
+  </div>
   <div class="row">
-    <h3>Se våra privattjänster</h3>
     @foreach ($private_services as $service)
         <div class="col-md-4 col-sm-6 item mb-2">
       <div class="card item-card card-block  h-100">

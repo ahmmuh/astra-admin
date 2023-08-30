@@ -9,7 +9,7 @@
 @if ($homePages->count() >0)
  <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      <strong>OBS!! Det finns text på startsida</strong> 
+      <strong>OBS!! Det finns text på startsida, Bara tillåten att uppdatera den eller ta bort helt och skapa ny text. </strong> 
     </div>
 @endif
 <div class="row">

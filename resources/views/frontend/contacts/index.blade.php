@@ -86,6 +86,10 @@
          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
      </div>
+
+     <div class="row">
+        @include('frontend.services.sections.index')
+     </div>
 </div>
 
     

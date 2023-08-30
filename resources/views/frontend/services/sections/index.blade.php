@@ -2,7 +2,7 @@
 <style>
 
 .service-section img{
-  height:200px;
+  height:18rem;
   width:100%;
 }
 

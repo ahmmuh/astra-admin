@@ -11,7 +11,7 @@ class Job extends Model
         'jobDescription',
         'location',
         'publiceradDatum',
-        'slutDatum',
+        'slutDatum'
 
     ];
     use HasFactory;

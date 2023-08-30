@@ -30,11 +30,20 @@ class AppServiceProvider extends ServiceProvider
         $services = DB::table('services')->paginate(3);
         // $extra = DB::table('services->extra')->get();
         $private_services = DB::table('private_services')->paginate(3);
-        $blogs = DB::table('blogs')->paginate(2);
+        $blogs = DB::table('blogs')->paginate(5);
         $contacts = DB::table('contacts')->get();
         $abouts = DB::table('abouts')->get();
         $logos = DB::table('logos')->get();
         $homePages = DB::table('homePages')->get();
+
+        //menu list for företagstjänster och privattjänster
+         $menu_services = DB::table('services')->get();
+         view()->share('menu_services', $menu_services);
+         
+         $private_menu_services = DB::table('private_services')->get();
+         view()->share('private_menu_services', $private_menu_services);
+
+
 
         view()->share('blogs', $blogs);
         // view()->share('extra', $extra);

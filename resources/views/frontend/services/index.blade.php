@@ -63,9 +63,8 @@ div.btns a:nth-child(1){
     box-shadow: 0 0 0 4px #5a01a7;
     transition: 0.5s;
 }
-html {
-  scroll-behavior: smooth;
-}
+html{scroll-behavior:smooth}
+
 
 </style>
 
@@ -78,7 +77,7 @@ html {
         <p>{{$homePage->description}} </p>
        @endforeach
         <div class="btns">
-          <a href="{{ route('services.index') }}" class="btn btn-lg btn-warning mr-1">Företagsjänster</a>
+          <a href="#services" #services class="btn btn-lg btn-warning mr-1">Företagsjänster</a>
           <a href="{{ route('privateservices.index') }}" class="btn btn-lg btn-warning">Privattjänster</a>
         </div>
         </div>
@@ -109,7 +108,7 @@ html {
  @endforeach
   @endif
  </div>
- <div class="row">
+ <div class="row" id="services">
  @include('frontend.services.sections.index')
  </div>
   </div>

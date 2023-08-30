@@ -1,6 +1,6 @@
 {{-- @extends('layouts.app') --}}
 <footer class="footer text-white">
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-3 col-md-6 mb-3">
             <img style="width: 120px" src="{{url('../images/astra-logos/logo3.png')}}" alt="Astra-logo">

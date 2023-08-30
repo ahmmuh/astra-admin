@@ -30,14 +30,8 @@ use \App\Mail\ContactMail;
 |
 */
 
-// Route::get('/frontend/jobs', [ClientJobController::class,'index'])->name('jobs');
 
-// Route::get('/frontend/jobs', [ClientJobController::class,'index']);
 Route::get('/', function () {
-    $clearcache = Artisan::call('cache:clear');
-   Artisan::call('route:clear'); 
-   Artisan::call('config:clear'); 
-   Artisan::call('view:clear'); 
      return view('frontend.services.index');
 });
 
@@ -58,10 +52,6 @@ Route::resource('abouts', AboutController::class);
 
 Route::get('send', [ContactMail::class,'envelope']);
 
-// Route::get('/order',function(){
-//     return new OrderMail();
-
-// });
 Auth::routes();
 Route::resource('startsida', StartsidaController::class);
 Route::resource('blogs', BlogController::class);

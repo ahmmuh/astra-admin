@@ -1,7 +1,7 @@
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans:ital,wght@1,700&family=Roboto:ital@0;1&display=swap');
 .service-section img{
-  height:150px;
+  height:18rem;
   width:100%;
 }
 
@@ -34,7 +34,9 @@
   transform: scale(1.05);
   box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
 }
-
+  .text-muted{
+    display: none;
+  }
 
 .card::before, .card::after {
   position: absolute;
@@ -57,6 +59,7 @@
 .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
   transform: scale3d(1, 1, 1);
 }
+
 </style>
   {{-- service section --}}
 <div class="container mt-2 service-section">
